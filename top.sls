@@ -1,5 +1,7 @@
 base:
   '*':
     - salt
-    - debian
     - sublime-text
+
+  'os:Debian':
+    - debian
