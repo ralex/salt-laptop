@@ -1,4 +1,4 @@
-{% for user in pillar.get('users', {}).items() %}
+{% for user in pillar.get('users', {}) %}
 terminator-config_{{ user }}:
   file.managed:
     - name:  /home/{{ user }}/.config/terminator/config
