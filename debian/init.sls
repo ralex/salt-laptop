@@ -4,9 +4,8 @@ testing-wise:
       - apt-listchanges
       - apt-listbugs
 
-testing-sources-list:
+/etc/apt/sources.list:
   file.managed:
-  /etc/apt/sources.list
     - contents: |-
       deb http://deb.debian.org/debian testing main
       deb http://deb.debian.org/debian testing-updates main
