@@ -1,3 +1,4 @@
 base:
   '*':
+    - salt
     - debian
