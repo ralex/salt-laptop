@@ -5,10 +5,14 @@
         "node_modules",
         ".git"
     ],
+    "in_process_packages":
+    [
+    ],
     "installed_packages":
     [
         "FileIcons",
         "Jinja2",
-        "Package Control"
-    ],
+        "Package Control",
+        "SaltStack-related syntax highlighting and snippets"
+    ]
 }

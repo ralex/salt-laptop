@@ -13,7 +13,6 @@ sublime-text-repo:
 sublime-text:
   pkg.installed
 
-
 {% for user in pillar.get('users', {}) %}
 sublime-text-user_config_{{ user }}:
   file.managed:
