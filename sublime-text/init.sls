@@ -14,15 +14,19 @@ sublime-text:
   pkg.installed
 
 {% for user in pillar.get('users', {}) %}
-sublime-text-user_config_{{ user }}:
+/home/{{ user }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
   file.managed:
-    - name:  /home/{{ user }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
     - source: salt://sublime-text/user.json
+    - user: {{ user }}
+    - group: {{ user }}
+    - mode: 644
 {% endfor %}
 
 {% for user in pillar.get('users', {}) %}
-sublime-text-packages_config_{{ user }}:
+/home/{{ user }}/.config/sublime-text-3/Packages/User/Package Control.sublime-settings:
   file.managed:
-    - name:  /home/{{ user }}/.config/sublime-text-3/Packages/User/Package Control.sublime-settings
     - source: salt://sublime-text/packages.json
+    - user: {{ user }}
+    - group: {{ user }}
+    - mode: 644
 {% endfor %}
