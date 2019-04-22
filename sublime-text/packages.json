@@ -1,0 +1,14 @@
+{
+    "bootstrapped": true,
+    "folder_exclude_patterns":
+    [
+        "node_modules",
+        ".git"
+    ],
+    "installed_packages":
+    [
+        "FileIcons",
+        "Jinja2",
+        "Package Control"
+    ],
+}
