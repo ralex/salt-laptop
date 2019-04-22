@@ -1,7 +1,7 @@
 {% from "i3/lib.sls" import gsettings %}
 
 i3-additional-packages:
-  pkg:
+  pkg.installed:
     - pkgs:
       - arc-theme
 
