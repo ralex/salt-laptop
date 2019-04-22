@@ -1,6 +1,7 @@
 base:
   '*':
     - salt
+    - i3
     - sublime-text
     - terminator
 
