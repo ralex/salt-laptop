@@ -5,7 +5,7 @@ i3-additional-packages:
     - pkgs:
       - arc-theme
 
-{% for user, params in pillar.get('users', {}) %}
+{% for user, params in pillar.get('users', {}).items() %}
 {# Change Windows buttons layout #}
 {{ gsettings(user, params['uid'], "org.gnome.desktop.wm.preferences", "button-layout", 'close,maximize,minimize:', "'close,maximize,minimize:'") }}
 {# Change Gnome Shell user theme #}
