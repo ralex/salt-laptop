@@ -9,5 +9,5 @@ i3-additional-packages:
 {# Change Windows buttons layout #}
 {{ gsettings(user, "org.gnome.desktop.wm.preferences", "button-layout", ':minimize,maximize,close', "':minimize,maximize,close'") }}
 {# Change Gnome Shell user theme #}
-{{ gsettings(user, "org.gnome.shell.extensions.user-theme", "name", "Arc", '^Arc$') }}
+{{ gsettings(user, "org.gnome.shell.extensions.user-theme", "name", "Arc-Darker", '^Arc-Darker$') }}
 {% endfor %}
