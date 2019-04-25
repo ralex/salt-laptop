@@ -12,7 +12,7 @@ i3-related-packages:
 {% for user in pillar.get('users', {}) %}
 /var/lib/AccountsService/users/{{ user }}:
   file.managed:
-    - content: |
+    - contents: |
       [User]
       Language=
       XSession=i3
@@ -23,7 +23,7 @@ i3-related-packages:
 
 /home/{{ user }}/.config/gtk-3.0/settings.ini:
   file.managed:
-    - content: |
+    - contents: |
       [Settings]
       gtk-application-prefer-dark-theme = 0
       gtk-theme-name = Arc-Darker
