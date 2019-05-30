@@ -47,6 +47,8 @@ pulseaudio-ctl:
     - name: make install
     - require:
       - git: https://github.com/graysky2/pulseaudio-ctl
+    - onchanges:
+      - git: https://github.com/graysky2/pulseaudio-ctl
 
 {% for user in pillar.get('users', {}) %}
 /var/lib/AccountsService/users/{{ user }}:
