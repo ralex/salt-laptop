@@ -47,7 +47,7 @@ i3-pip-packages:
     - contents: |
         [Settings]
         gtk-application-prefer-dark-theme = 0
-        gtk-theme-name = Arc-Darker
+        gtk-theme-name = Arc
     - user: {{ user }}
     - group: {{ user }}
     - mode: 644
