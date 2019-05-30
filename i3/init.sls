@@ -1,6 +1,7 @@
 i3-related-packages:
   pkg.installed:
     - pkgs:
+      - bc
       - git
       - i3-wm
       - i3status
