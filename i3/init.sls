@@ -14,7 +14,7 @@ i3-related-packages:
 
 i3-pip-packages:
   pip.installed:
-    -pkgs:
+    - pkgs:
       - pypandoc
       - fontawesome
     - require:
