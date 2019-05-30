@@ -12,13 +12,15 @@ i3-related-packages:
       - imagemagick
       - python-pip
 
-i3-pip-packages:
+pypandoc:
   pip.installed:
-    - pkgs:
-      - pypandoc
-      - fontawesome
     - require:
       - pkg: i3-related-packages
+
+fontawesome:
+  pip.installed:
+    - require:
+      - pkg: pypandoc
 
 {% for user in pillar.get('users', {}) %}
 /var/lib/AccountsService/users/{{ user }}:
