@@ -20,8 +20,11 @@ pypandoc:
     - require:
       - pkg: i3-related-packages
 
-fontawesome:
+i3-pip-packages:
   pip.installed:
+    - pkgs:
+      - fontawesome
+      - taskw
     - bin_env: '/usr/bin/pip3'
     - require:
       - pip: pypandoc
