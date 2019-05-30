@@ -13,6 +13,7 @@ i3-related-packages:
       - python3
       - python3-pip
       - pandoc
+      - pulseaudio-ctl
 
 pypandoc:
   pip.installed:
