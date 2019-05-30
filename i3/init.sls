@@ -24,8 +24,8 @@ fontawesome:
         Language=
         XSession=i3
         SystemAccount=false
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: root
+    - group: root
     - mode: 644
 
 /home/{{ user }}/.config/gtk-3.0/settings.ini:
