@@ -10,7 +10,8 @@ i3-related-packages:
       - dunst
       - scrot
       - imagemagick
-      - python-pip
+      - python3
+      - python3-pip
       - pandoc
 
 pypandoc:
