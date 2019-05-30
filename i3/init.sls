@@ -11,6 +11,7 @@ i3-related-packages:
       - scrot
       - imagemagick
       - python-pip
+      - pandoc
 
 pypandoc:
   pip.installed:
