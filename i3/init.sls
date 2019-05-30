@@ -20,7 +20,7 @@ pypandoc:
 fontawesome:
   pip.installed:
     - require:
-      - pkg: pypandoc
+      - pip: pypandoc
 
 {% for user in pillar.get('users', {}) %}
 /var/lib/AccountsService/users/{{ user }}:
