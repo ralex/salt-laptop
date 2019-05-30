@@ -16,11 +16,13 @@ i3-related-packages:
 
 pypandoc:
   pip.installed:
+    - bin_env: '/usr/bin/pip3'
     - require:
       - pkg: i3-related-packages
 
 fontawesome:
   pip.installed:
+    - bin_env: '/usr/bin/pip3'
     - require:
       - pip: pypandoc
 
