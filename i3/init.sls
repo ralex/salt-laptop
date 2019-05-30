@@ -1,6 +1,7 @@
 i3-related-packages:
   pkg.installed:
     - pkgs:
+      - git
       - i3-wm
       - i3status
       - i3lock
@@ -28,6 +29,22 @@ i3-pip-packages:
     - bin_env: '/usr/bin/pip3'
     - require:
       - pip: pypandoc
+
+https://github.com/graysky2/pulseaudio-ctl:
+  git.latest:
+    - rev: v1.66
+    - target: /usr/local/src/pulseaudio-ctl
+    - user: root
+    - require:
+      - pkg: i3-related-packages
+
+pulseaudio-ctl:
+  cmd.run:
+    - cwd: /usr/local/src/pulseaudio-ctl
+    - user: root
+    - name: make install
+    - require:
+      - git: https://github.com/graysky2/pulseaudio-ctl
 
 {% for user in pillar.get('users', {}) %}
 /var/lib/AccountsService/users/{{ user }}:
