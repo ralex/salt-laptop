@@ -8,6 +8,13 @@ i3-related-packages:
       - arc-theme
       - rofi
       - dunst
+      - scrot
+      - imagemagick
+
+fontawesome:
+  pip.installed:
+    - require:
+      - pkg: python-pip
 
 {% for user in pillar.get('users', {}) %}
 /var/lib/AccountsService/users/{{ user }}:
