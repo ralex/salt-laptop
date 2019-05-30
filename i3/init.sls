@@ -12,8 +12,11 @@ i3-related-packages:
       - imagemagick
       - python-pip
 
-fontawesome:
+i3-pip-packages:
   pip.installed:
+    -pkgs:
+      - pypandoc
+      - fontawesome
     - require:
       - pkg: i3-related-packages
 
