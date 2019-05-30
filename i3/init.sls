@@ -10,11 +10,12 @@ i3-related-packages:
       - dunst
       - scrot
       - imagemagick
+      - python-pip
 
 fontawesome:
   pip.installed:
     - require:
-      - pkg: python-pip
+      - pkg: i3-related-packages
 
 {% for user in pillar.get('users', {}) %}
 /var/lib/AccountsService/users/{{ user }}:
