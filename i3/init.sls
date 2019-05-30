@@ -6,6 +6,7 @@ i3-related-packages:
       - i3-wm
       - i3status
       - i3lock
+      - feh
       - fonts-font-awesome
       - arc-theme
       - rofi
