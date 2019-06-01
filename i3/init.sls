@@ -74,7 +74,7 @@ pulseaudio-ctl:
 {% endfor %}
 
 {% for user in pillar.get('users', {}) %}
-/home/{{ user}}/.config/i3status.conf:
+/home/{{ user}}/.config/i3/i3status.conf:
   file.managed:
     - source: salt://i3/i3status.conf.j2
     - template: jinja
