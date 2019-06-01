@@ -82,3 +82,11 @@ pulseaudio-ctl:
     - group: {{ user }}
     - mode: 644
 {% endfor %}
+
+{% for user in pillar.get('users', {}) %}
+i3-msg reload:
+  cmd.run:
+    - {{ user }}
+    - onchanges:
+      - file: /home/{{ user}}/.config/i3/i3status.conf
+{% endfor %}
