@@ -86,7 +86,7 @@ pulseaudio-ctl:
 {% for user in pillar.get('users', {}) %}
 i3-msg reload:
   cmd.run:
-    - {{ user }}
+    - user: {{ user }}
     - onchanges:
       - file: /home/{{ user}}/.config/i3/i3status.conf
 {% endfor %}
