@@ -7,33 +7,33 @@ general {
     color_bad       = '#e25a5a'
 }
 
-{% for interface in grains['ip4_interfaces'].keys() %}
-{% if interface.startswith('enp') %}
+{%- for interface in grains['ip4_interfaces'].keys() -%}
+{%- if interface.startswith('enp') -%}
 order += "ethernet {{ interface }}"
-{% elif interface.startswith('wlp') %}
+{%- elif interface.startswith('wlp') -%}
 order += "wireless {{ interface }}"
-{% endif %}
-{% endfor %}
+{%- endif -%}
+{%- endfor -%}
 order += "run_watch VPN"
 order += "tztime local"
 
-{% for interface in grains['ip4_interfaces'].keys() %}
-{% if interface.startswith('enp') %}
+{%- for interface in grains['ip4_interfaces'].keys() -%}
+{%- if interface.startswith('enp') -%}
 ethernet {{ interface }} {
     format_up = ""
     format_down = ""
     separator = false
     separator_block_width = 1
 }
-{% elif interface.startswith('wlp') %}
+{%- elif interface.startswith('wlp') -%}
 wireless {{ interface }} {
     format_up = "   %essid "
     format_down = ""
     separator = false
     separator_block_width = 1
 }
-{% endif %}
-{% endfor %}
+{%- endif -%}
+{%- endfor -%}
 
 run_watch VPN {
     pidfile = "/var/run/vpn.pid"
