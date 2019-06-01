@@ -77,4 +77,8 @@ pulseaudio-ctl:
 /home/{{ user}}/.config/i3status.conf:
   file.managed:
     - source: salt://i3/i3status.conf.j2
+    - template: jinja
+    - user: {{ user }}
+    - group: {{ user }}
+    - mode: 644
 {% endfor %}
