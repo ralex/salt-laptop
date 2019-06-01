@@ -1,0 +1,45 @@
+general {
+    output_format   = "i3bar"
+    interval 		= 1
+    colors 			= true
+    color_good      = '#4fa360'
+    color_degraded  = '#e7ff91'
+    color_bad       = '#e25a5a'
+}
+
+{% for interface in grains['ip4_interfaces'].keys() %}
+{% if interface.startswith('enp') %}
+order += "ethernet {{ interface }}"
+{% elif interface.startswith('wlp') %}
+order += "wireless {{ interface }}"
+{% endif %}
+{% endfor %}
+order += "run_watch VPN"
+order += "tztime local"
+
+{% for interface in grains['ip4_interfaces'].keys() %}
+{% if interface.startswith('enp') %}
+ethernet {{ interface }} {
+    format_up = ""
+    format_down = ""
+    separator = false
+    separator_block_width = 1
+}
+{% elif interface.startswith('wlp') %}
+wireless {{ interface }} {
+    format_up = "   %essid "
+    format_down = ""
+    separator = false
+    separator_block_width = 1
+}
+{% endif %}
+{% endfor %}
+
+run_watch VPN {
+    pidfile = "/var/run/vpn.pid"
+    format_down = " "
+}
+
+tztime local {
+    format = "%V  %A %e %B   %H:%M:%S"
+}
