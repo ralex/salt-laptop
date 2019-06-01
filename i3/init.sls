@@ -87,7 +87,8 @@ pulseaudio-ctl:
 i3-msg restart:
   cmd.run:
     - user: {{ user }}
-    - ignore_retcode: True
+    - check_cmd:
+      - /bin/true
     - onchanges:
       - file: /home/{{ user}}/.config/i3/i3status.conf
 {% endfor %}
