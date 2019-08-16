@@ -2,8 +2,8 @@
 
 {% for host, params in pillar.get('ssh:client:hosts', {}).items() %}
 Host {{ host }}
-{% if params.hostname is defined %}  Hostname params.hostname {% endif %}
-{% if params.proxycommand is defined %}  ProxyCommand params.proxycommand {% endif %}
-{% if params.user is defined %}  User params.user {% endif %}
-{% if params.identityfile is defined %}  IdentityFile params.identityfile {% endif %}
+{% if params['hostname'] is defined %}  Hostname params['hostname'] {% endif %}
+{% if params['proxycommand'] is defined %}  ProxyCommand params['proxycommand'] {% endif %}
+{% if params['user'] is defined %}  User params['user'] {% endif %}
+{% if params['identityfile'] is defined %}  IdentityFile params['identityfile'] {% endif %}
 {% endfor %}
