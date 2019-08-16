@@ -1,4 +1,4 @@
-{% if pillars['ssh']['client']['add_keys_to_agent'] %}AddKeysToAgent yes{% endif %}
+{% if pillar['ssh']['client']['add_keys_to_agent'] %}AddKeysToAgent yes{% endif %}
 
 {% for host in pillar.get('ssh:client:hosts', {}) %}
 Host {{ host }}
