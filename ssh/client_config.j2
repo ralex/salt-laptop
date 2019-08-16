@@ -2,8 +2,16 @@
 
 {% for host, args in salt['pillar.get']('ssh:client:hosts', {}).iteritems() -%}
 Host {{ host }}
-{%- if args['hostname'] is defined %}  Hostname {{ args['hostname'] }}{% endif %}
-{%- if args['proxycommand'] is defined %}  ProxyCommand {{ args['proxycommand'] }}{% endif %}
-{%- if args['user'] is defined %}  User {{ args['user'] }}{% endif %}
-{%- if args['identityfile'] is defined %}  IdentityFile {{ args['identityfile'] }}{% endif %}
+{%- if args['hostname'] is defined %}
+  Hostname {{ args['hostname'] }}
+{% endif -%}
+{%- if args['proxycommand'] is defined %}
+  ProxyCommand {{ args['proxycommand'] }}
+{% endif -%}
+{%- if args['user'] is defined %}
+  User {{ args['user'] }}
+{% endif -%}
+{%- if args['identityfile'] is defined %}
+  IdentityFile {{ args['identityfile'] }}
+{% endif -%}
 {% endfor -%}
