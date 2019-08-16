@@ -1,9 +1,9 @@
 {% if pillar['ssh']['client']['add_keys_to_agent'] %}AddKeysToAgent yes{% endif %}
 
-{% for host in pillar.get('ssh:client:hosts', {}) %}
+{% for host, params in pillar.get('ssh:client:hosts', {}).items() %}
 Host {{ host }}
-{% if host.hostname is defined %}  Hostname host.hostname {% endif %}
-{% if host.proxycommand is defined %}  ProxyCommand host.proxycommand {% endif %}
-{% if host.user is defined %}  User host.user {% endif %}
-{% if host.identityfile is defined %}  IdentityFile host.identityfile {% endif %}
+{% if params.hostname is defined %}  Hostname params.hostname {% endif %}
+{% if params.proxycommand is defined %}  ProxyCommand params.proxycommand {% endif %}
+{% if params.user is defined %}  User params.user {% endif %}
+{% if params.identityfile is defined %}  IdentityFile params.identityfile {% endif %}
 {% endfor %}
