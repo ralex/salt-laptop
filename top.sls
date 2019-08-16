@@ -7,4 +7,5 @@ base:
     - taskwarrior
 
   'os:Debian':
+    - match: grain
     - debian
