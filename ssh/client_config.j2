@@ -4,14 +4,15 @@
 Host {{ host }}
 {%- if args['hostname'] is defined %}
   Hostname {{ args['hostname'] }}
-{% endif -%}
+{%- endif -%}
 {%- if args['proxycommand'] is defined %}
   ProxyCommand {{ args['proxycommand'] }}
-{% endif -%}
+{%- endif -%}
 {%- if args['user'] is defined %}
   User {{ args['user'] }}
-{% endif -%}
+{%- endif -%}
 {%- if args['identityfile'] is defined %}
   IdentityFile {{ args['identityfile'] }}
-{% endif -%}
+{%- endif -%}
+
 {% endfor -%}
