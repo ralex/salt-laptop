@@ -1,6 +1,6 @@
 {% if pillar['ssh']['client']['add_keys_to_agent'] %}AddKeysToAgent yes{% endif %}
 
-{% for client, hosts in salt['pillar.get']('ssh', {}).iteritems() %}
+{% for client, hosts in salt['pillar.get']('ssh:client', {}).iteritems() %}
 {% for host, args in hosts.iteritems() %}
 Host {{ host }}
 {% if args['hostname'] is defined %}  Hostname {{ args['hostname'] }}{% endif %}
