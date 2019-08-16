@@ -12,5 +12,5 @@ Host {{ host }}
 {%- endif -%}
 {%- if args['identityfile'] is defined %}
   IdentityFile {{ args['identityfile'] }}
-{%- endif -%}
+{% endif %}
 {% endfor %}
