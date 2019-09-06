@@ -32,9 +32,9 @@ i3-pip-packages:
     - require:
       - pip: pypandoc
 
-https://github.com/graysky2/pulseaudio-ctl:
+https://github.com/ralex/pulseaudio-ctl:
   git.latest:
-    - rev: v1.66
+    - rev: master
     - target: /usr/local/src/pulseaudio-ctl
     - user: root
     - require:
@@ -46,9 +46,9 @@ pulseaudio-ctl:
     - user: root
     - name: make install
     - require:
-      - git: https://github.com/graysky2/pulseaudio-ctl
+      - git: https://github.com/ralex/pulseaudio-ctl
     - onchanges:
-      - git: https://github.com/graysky2/pulseaudio-ctl
+      - git: https://github.com/ralex/pulseaudio-ctl
 
 {% for user in pillar.get('users', {}) %}
 /var/lib/AccountsService/users/{{ user }}:
