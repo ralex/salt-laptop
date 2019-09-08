@@ -13,6 +13,7 @@ i3-related-packages:
       - dunst
       - scrot
       - imagemagick
+      - notify-send
       - python3
       - python3-pip
       - pandoc
