@@ -1,7 +1,7 @@
 sddm:
   pkg.installed
 
-libqt5qml-graphicaleffects:
+qml-module-qtgraphicaleffects:
   pkg.installed
 
 https://github.com/ralex/Elegant-sddm:
@@ -11,7 +11,7 @@ https://github.com/ralex/Elegant-sddm:
     - user: root
     - require:
       - pkg: sddm
-      - pkg: libqt5qml-graphicaleffects
+      - pkg: qml-module-qtgraphicaleffects
 
 /etc/sddm.conf:
   file.managed:
