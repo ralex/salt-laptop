@@ -8,6 +8,7 @@ https://github.com/ralex/Elegant-sddm:
   git.latest:
     - rev: master
     - target: /usr/share/sddm/themes
+    - force_clone: True
     - user: root
     - require:
       - pkg: sddm
