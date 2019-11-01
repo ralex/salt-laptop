@@ -17,6 +17,7 @@ i3-related-packages:
       - python3
       - python3-pip
       - pandoc
+      - xautolock
 
 pypandoc:
   pip.installed:
