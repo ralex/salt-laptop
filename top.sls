@@ -7,6 +7,7 @@ base:
     - sublime-text
     - terminator
     - taskwarrior
+    - spotify
 
   'os:Debian':
     - match: grain
