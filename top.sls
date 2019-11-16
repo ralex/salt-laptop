@@ -8,6 +8,7 @@ base:
     - terminator
     - taskwarrior
     - spotify
+    - virtualbox
 
   'os:Debian':
     - match: grain
