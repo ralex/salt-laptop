@@ -9,6 +9,7 @@ base:
     - taskwarrior
     - spotify
     - virtualbox
+    - docker
 
   'os:Debian':
     - match: grain
