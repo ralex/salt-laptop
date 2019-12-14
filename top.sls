@@ -7,6 +7,7 @@ base:
     - sublime-text
     - terminator
     - taskwarrior
+    - signal
     - spotify
     - virtualbox
     - docker
