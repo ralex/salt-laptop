@@ -54,6 +54,13 @@ pulseaudio-ctl:
       - git: https://github.com/ralex/pulseaudio-ctl
 
 {% for user in pillar.get('users', {}) %}
+/home/{{ user }}/.config/pulseaudio-ctl/config:
+  file.managed:
+    - source: salt://i3/pulseaudio-ctl.config
+    - user: {{ user }}
+    - group: {{ user }}
+    - mode: 644
+
 /var/lib/AccountsService/users/{{ user }}:
   file.managed:
     - contents: |
