@@ -9,7 +9,6 @@ base:
     - taskwarrior
     - signal
     - spotify
-    - virtualbox
     - docker
 
   'os:Debian':
