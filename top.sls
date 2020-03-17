@@ -10,6 +10,7 @@ base:
     - signal
     - spotify
     - docker
+    - vagrant-libvirt
 
   'os:Debian':
     - match: grain
