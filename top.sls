@@ -11,6 +11,7 @@ base:
     - spotify
     - docker
     - vagrant-libvirt
+    - minikube
 
   'os:Debian':
     - match: grain
