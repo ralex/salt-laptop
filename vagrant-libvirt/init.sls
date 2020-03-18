@@ -32,7 +32,7 @@ libvirtd:
 libvirt:
   group.present:
     - addusers:
-      {{ pillar.keys('users') }}
+      {{ pillar.get('users') }}
 
 vagrant-libvirt-packages:
   pkg.installed:
