@@ -10,6 +10,7 @@
 /home/{{ user }}/.minikube/config/config.json:
   file.managed:
     - source: salt://minikube/config.json
+    - makedirs: True
     - user: {{ user }}
     - group: {{ user }}
     - mode: 644
