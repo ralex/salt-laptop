@@ -12,6 +12,7 @@ base:
     - docker
     - vagrant-libvirt
     - minikube
+    - kubernetes-client
 
   'os:Debian':
     - match: grain
