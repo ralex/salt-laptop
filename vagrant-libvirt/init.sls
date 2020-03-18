@@ -1,5 +1,3 @@
-{% for user in pillar.get('users', {}) %}
-
 vagrant-packages:
   pkg.installed:
     - pkgs:
@@ -43,6 +41,7 @@ vagrant-libvirt-packages:
       - pkg: vagrant-packages
       - pkg: kvm-packages
 
+{% for user in pillar.get('users', {}) %}
 vagrant plugin install vagrant-libvirt:
   cmd.run:
     - runas: {{ user }}
@@ -51,3 +50,4 @@ vagrant plugin install vagrant-libvirt:
       - pkg: kvm-packages
       - pkg: vagrant-libvirt-packages
     - unless: vagrant plugin list | grep -q vagrant-libvirt && true || false
+{% endfor %}
