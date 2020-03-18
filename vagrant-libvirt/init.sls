@@ -29,11 +29,6 @@ libvirtd:
     - require:
       - pkg: kvm-packages
 
-libvirt:
-  group.present:
-    - addusers:
-      {{ pillar.get('users') }}
-
 vagrant-libvirt-packages:
   pkg.installed:
     - pkgs:
