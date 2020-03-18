@@ -1,4 +1,4 @@
-{% set user = pillar['user']['local'] %}
+{% for user in pillar.get('users', {}) %}
 
 vagrant-packages:
   pkg.installed:
