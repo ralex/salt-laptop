@@ -86,7 +86,7 @@ pulseaudio-ctl:
   file.managed:
     - source: salt://i3/dunstrc
     - user: {{ user }}
-    - group: {{ group }}
+    - group: {{ user }}
     - makedirs: True
     - mode: 644
 
