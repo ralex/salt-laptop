@@ -81,9 +81,23 @@ pulseaudio-ctl:
     - user: {{ user }}
     - group: {{ user }}
     - mode: 644
-{% endfor %}
 
-{% for user in pillar.get('users', {}) %}
+/home/{{ user }}/.config/dunst/dunstrc:
+  file.managed:
+    - source: salt://i3/dunstrc
+    - user: {{ user }}
+    - group: {{ group }}
+    - makedirs: True
+    - mode: 644
+
+/home/{{ user}}/.config/i3/config:
+  file.managed:
+    - source: salt://i3/config.j2
+    - template: jinja
+    - user: {{ user }}
+    - group: {{ user }}
+    - mode: 644
+
 /home/{{ user}}/.config/i3/i3status.conf:
   file.managed:
     - source: salt://i3/i3status.conf.j2
