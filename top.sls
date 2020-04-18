@@ -13,6 +13,7 @@ base:
     - vagrant-libvirt
     - minikube
     - kubernetes-client
+    - vscode
 
   'os:Debian':
     - match: grain
