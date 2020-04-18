@@ -5,5 +5,8 @@ terminator-config_{{ user }}:
     - source: salt://terminator/config.j2
 {% endfor %}
 
-terminator:
-  pkg.installed
+terminator-packages:
+  pkg.installed:
+    - pkgs:
+      - terminator
+      - fonts-inconsolata
