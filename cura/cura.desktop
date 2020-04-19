@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Cura
+GenericName=Cura
+Comment=Ultimaker Cura
+Icon=icône du programme #il peut s'agir d'un chemin, ou alors du nom d'une icône contenue dans votre thème d'icônes
+Exec=/opt/cura/Ultimaker_Cura.AppImage
+Terminal=false
+StartupNotify=false
+Categories=Application

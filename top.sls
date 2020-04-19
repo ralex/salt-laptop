@@ -14,6 +14,7 @@ base:
     - minikube
     - kubernetes-client
     - vscode
+    - cura
 
   'os:Debian':
     - match: grain
