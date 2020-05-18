@@ -12,8 +12,11 @@ base:
     - docker
     - vagrant-libvirt
     - minikube
-    - kubernetes-client
     - vscode
+
+home:
+  '*':
+    - kubernetes-client
     - cura
 
   'os:Debian':
