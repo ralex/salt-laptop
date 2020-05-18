@@ -1,17 +1,39 @@
 {% if pillar['ssh']['client']['add_keys_to_agent'] %}AddKeysToAgent yes{% endif %}
+{% if pillar['ssh']['client']['identities_only'] %}IdentitiesOnly yes{% endif %}
 {% if pillar['ssh']['client']['compression'] %}Compression yes{% endif %}
 {% for host, args in salt['pillar.get']('ssh:client:hosts', {}).iteritems() %}
 Host {{ host }}
 {%- if args['hostname'] is defined %}
   Hostname {{ args['hostname'] }}
 {%- endif -%}
-{%- if args['proxycommand'] is defined %}
-  ProxyCommand {{ args['proxycommand'] }}
+{%- if args['proxy_command'] is defined %}
+  ProxyCommand {{ args['proxy_command'] }}
 {%- endif -%}
 {%- if args['user'] is defined %}
   User {{ args['user'] }}
 {%- endif -%}
-{%- if args['identityfile'] is defined %}
-  IdentityFile {{ args['identityfile'] }}
+{%- if args['identity_file'] is defined %}
+  IdentityFile {{ args['identity_file'] }}
+{% endif %}
+{%- if args['port'] is defined %}
+  Port {{ args['port'] }}
+{% endif %}
+{%- if args['ciphers'] is defined %}
+  Ciphers {{ args['ciphers'] }}
+{% endif %}
+{%- if args['kex_algorithms'] is defined %}
+  KexAlgorithms {{ args['kex_algorithms'] }}
+{% endif %}
+{%- if args['preferred_authentications'] is defined %}
+  PreferredAuthentications {{ args['preferred_authentications'] }}
+{% endif %}
+{%- if args['server_alive_interval'] is defined %}
+  ServerAliveInterval {{ args['server_alive_interval'] }}
+{% endif %}
+{%- if args['server_alive_count_max'] is defined %}
+  ServerAliveCountMax {{ args['server_alive_count_max'] }}
+{% endif %}
+{%- if args['connect_timeout'] is defined %}
+  ConnectTimeout {{ args['connect_timeout'] }}
 {% endif %}
 {% endfor %}
