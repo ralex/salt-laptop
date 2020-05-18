@@ -14,8 +14,7 @@ base:
     - minikube
     - vscode
 
-home:
-  '*':
+  'roles:home':
     - kubernetes-client
     - cura
 
