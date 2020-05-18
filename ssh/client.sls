@@ -1,7 +1,7 @@
 openssh-client:
   pkg.installed
 
-{% for user in pillar.get('users', {}) %}
+{% for user in pillar.get('users', {}).items() %}
 /home/{{ user }}/.ssh/config:
   file.managed:
     - source: salt://ssh/client_config.j2
