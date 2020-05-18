@@ -90,6 +90,14 @@ pulseaudio-ctl:
     - makedirs: True
     - mode: 644
 
+/home/{{ user}}/.config/i3/rofi.conf:
+  file.managed:
+    - source: salt://i3/rofi.conf.j2
+    - template: jinja
+    - user: {{ user }}
+    - group: {{ user }}
+    - mode: 644
+
 /home/{{ user}}/.config/i3/config:
   file.managed:
     - source: salt://i3/config.j2
