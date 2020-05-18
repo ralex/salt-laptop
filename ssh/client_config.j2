@@ -1,7 +1,7 @@
-{%- if salt['pillar.get']('ssh:client:add_keys_to_agent', False) %}AddKeysToAgent yes{% endif %}
-{%- if salt['pillar.get']('ssh:client:identities_only', False) %}IdentitiesOnly yes{% endif %}
-{%- if salt['pillar.get']('ssh:client:compression', False) %}Compression yes{% endif %}
-{%- for host, args in salt['pillar.get']('ssh:client:hosts', {}).items() %}
+AddKeysToAgent {{ 'yes' if salt['pillar.get']('ssh:client:add_keys_to_agent', False) else 'no' }}
+IdentitiesOnly {{ 'yes' if salt['pillar.get']('ssh:client:identities_only', False) else 'no' }}
+Compression {{ 'yes' if salt['pillar.get']('ssh:client:compression', False) else 'no' }}
+{% for host, args in salt['pillar.get']('ssh:client:hosts', {}).items() %}
 Host {{ host }}
 {%- if args['hostname'] is defined %}
     Hostname {{ args['hostname'] }}
