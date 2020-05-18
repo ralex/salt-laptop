@@ -13,3 +13,19 @@ testing-wise:
       - deb http://deb.debian.org/debian buster main contrib non-free
       - deb http://deb.debian.org/debian buster-updates main contrib non-free
       - deb http://security.debian.org/debian-security buster/updates main contrib non-free
+
+
+/etc/apt/preferences.d/pinning:
+  file.managed:
+    - contents: |
+        Package: *
+        Pin: release a=testing
+        Pin-Priority: 700
+
+        Package: *
+        Pin: release a=stable
+        Pin-Priority: 650
+
+        Package: *
+        Pin: release n=sid
+        Pin-Priority: 100
