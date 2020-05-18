@@ -14,26 +14,26 @@ Host {{ host }}
 {%- endif -%}
 {%- if args['identity_file'] is defined %}
     IdentityFile {{ args['identity_file'] }}
-{% endif %}
+{%- endif -%}
 {%- if args['port'] is defined %}
     Port {{ args['port'] }}
-{% endif %}
+{%- endif -%}
 {%- if args['ciphers'] is defined %}
     Ciphers {{ args['ciphers'] }}
-{% endif %}
+{%- endif -%}
 {%- if args['kex_algorithms'] is defined %}
     KexAlgorithms {{ args['kex_algorithms'] }}
-{% endif %}
+{%- endif -%}
 {%- if args['preferred_authentications'] is defined %}
     PreferredAuthentications {{ args['preferred_authentications'] }}
-{% endif %}
+{%- endif -%}
 {%- if args['server_alive_interval'] is defined %}
     ServerAliveInterval {{ args['server_alive_interval'] }}
-{% endif %}
+{%- endif -%}
 {%- if args['server_alive_count_max'] is defined %}
     ServerAliveCountMax {{ args['server_alive_count_max'] }}
-{% endif %}
+{%- endif -%}
 {%- if args['connect_timeout'] is defined %}
     ConnectTimeout {{ args['connect_timeout'] }}
-{% endif %}
+{%- endif -%}
 {% endfor %}
