@@ -47,7 +47,7 @@ libvirt:
     - members: {{ pillar.get('users', {}) }}
 
 {% for user in pillar.get('users', {}) %}
-vagrant plugin install vagrant-libvirt:
+vagrant plugin install vagrant-libvirt for {{ user }}:
   cmd.run:
     - runas: {{ user }}
     - require:
