@@ -35,7 +35,5 @@ Host {{ host }}
 {%- endif -%}
 {%- if args['connect_timeout'] is defined %}
     ConnectTimeout {{ args['connect_timeout'] }}
-{%- endif -%}
-
-
+{%- endif %}
 {% endfor %}
