@@ -17,6 +17,11 @@ base:
     - kubernetes-client
     - cura
 
+  'roles:work':
+    - common
+    - cntlm
+    - docker-cds
+
   'os:Debian':
     - match: grain
     - debian
