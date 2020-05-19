@@ -13,7 +13,6 @@ base:
     - vagrant-libvirt
     - minikube
     - vscode
-    - sublime-text
 
   'roles:home':
     - kubernetes-client
