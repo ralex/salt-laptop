@@ -4,18 +4,18 @@ sublime-text-requirements:
       - apt-transport-https
 
 sublime-text-repo:
-  pkgrepo.managed:
+  pkgrepo.absent:
     - humanname: Sublime Text 3
     - name: deb https://download.sublimetext.com/ apt/stable/
     - file: /etc/apt/sources.list.d/sublime-text.list
     - key_url: https://download.sublimetext.com/sublimehq-pub.gpg
 
 sublime-text:
-  pkg.installed
+  pkg.removed
 
 {% for user in pillar.get('users', {}) %}
 /home/{{ user }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
-  file.managed:
+  file.absent:
     - source: salt://sublime-text/user.json
     - user: {{ user }}
     - group: {{ user }}
@@ -24,7 +24,7 @@ sublime-text:
 
 {% for user in pillar.get('users', {}) %}
 /home/{{ user }}/.config/sublime-text-3/Packages/User/Package Control.sublime-settings:
-  file.managed:
+  file.absent:
     - source: salt://sublime-text/packages.json
     - user: {{ user }}
     - group: {{ user }}
