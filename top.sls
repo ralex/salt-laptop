@@ -12,12 +12,12 @@ base:
     - minikube
     - vscode
 
-  'roles:home':
+  'G@roles:home':
     - docker
     - kubernetes-client
     - cura
 
-  'roles:work':
+  'G@roles:work':
     - common
     - cntlm
     - docker-cds
