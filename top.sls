@@ -9,12 +9,12 @@ base:
     - taskwarrior
     - signal
     - spotify
-    - docker
     - vagrant-libvirt
     - minikube
     - vscode
 
   'roles:home':
+    - docker
     - kubernetes-client
     - cura
 
