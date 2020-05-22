@@ -78,6 +78,8 @@ pulseaudio-ctl:
         [Settings]
         gtk-application-prefer-dark-theme = 0
         gtk-theme-name = Arc
+        gtk-font-name = DejaVu Sans 8
+        
     - user: {{ user }}
     - group: {{ user }}
     - mode: 644
