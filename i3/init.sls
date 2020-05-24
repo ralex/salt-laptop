@@ -120,6 +120,7 @@ pulseaudio-ctl:
 {% for user in pillar.get('users', {}) %}
 i3-msg restart for {{ user }}:
   cmd.run:
+    - name: i3-msg restart
     - user: {{ user }}
     - check_cmd:
       - /bin/true
