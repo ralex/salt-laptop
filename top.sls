@@ -1,6 +1,7 @@
 base:
   '*':
     - salt
+    - git
     - i3
     - sddm
     - ssh.client
