@@ -1,7 +1,7 @@
 git:
   pkg.installed
 
-deb https://packagecloud.io/github/git-lfs/debian/ bullseye main:
+deb https://packagecloud.io/github/git-lfs/debian/ buster main:
   pkgrepo.managed:
     - humanname: Github git lfs
     - file: /etc/apt/sources.list.d/github_git-lfs.list
