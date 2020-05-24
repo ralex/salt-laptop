@@ -11,6 +11,7 @@ base:
     - vagrant-libvirt
     - minikube
     - vscode
+    - keybase
 
   'G@roles:home':
     - docker
