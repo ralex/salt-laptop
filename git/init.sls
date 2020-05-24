@@ -11,13 +11,6 @@ git-lfs:
   pkg.installed
 
 {% for user in pillar.get('users', {}) %}
-terminator-config_{{ user }}:
-  file.managed:
-    - name:  /home/{{ user }}/.config/terminator/config
-    - source: salt://terminator/config.j2
-{% endfor %}
-
-{% for user in pillar.get('users', {}) %}
 git lfs install for {{ user }}:
   cmd.run:
     - name: git lfs install
