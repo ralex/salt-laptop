@@ -14,15 +14,17 @@ base:
     - keybase
 
   'G@roles:home':
+    - match: grain
     - docker
     - kubernetes-client
     - cura
 
   'G@roles:work':
+    - match: grain
     - common
     - cntlm
     - docker-cds
 
-  'os:Debian':
+  'G@os:Debian':
     - match: grain
     - debian
