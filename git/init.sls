@@ -18,5 +18,6 @@ git lfs install for {{ user }}:
     - check_cmd:
       - /bin/true
     - onchanges:
-      - pkgrepo: /etc/apt/sources.list.d/github_git-lfs.list
+      - pkgrepo: deb https://packagecloud.io/github/git-lfs/debian/ buster main
+      - pkg: git-lfs
 {% endfor %}
