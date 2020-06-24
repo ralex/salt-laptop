@@ -11,6 +11,7 @@ base:
     - spotify
     - vagrant-libvirt
     - minikube
+    - vim
     - vscode
     - keybase
 
