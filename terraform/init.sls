@@ -1,4 +1,4 @@
-deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main:
+deb [arch=amd64] https://apt.releases.hashicorp.com buster main:
   pkgrepo.managed:
     - humanname: Terraform
     - file: /etc/apt/sources.list.d/terraform.list
