@@ -14,6 +14,7 @@ base:
     - vim
     - vscode
     - keybase
+    - terraform
 
   'G@roles:home':
     - match: grain
