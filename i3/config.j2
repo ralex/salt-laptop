@@ -60,6 +60,8 @@ bindsym $mod+Shift+A kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show drun -fake-transparency -font "SFNS Display 18" -config ~/.config/i3/rofi.conf
+# use rofi window mode for Alt+tab key bindings
+bindsym Mod1+Tab exec rofi -show window -fake-transparency -font "SFNS Display 18" -config ~/.config/i3/rofi.conf
 
 # change focus
 #bindsym $mod+j focus left
