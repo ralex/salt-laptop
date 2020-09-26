@@ -3,7 +3,7 @@
 /opt/cura/Ultimaker_Cura.AppImage:
   file.managed:
     - source: https://github.com/Ultimaker/Cura/releases/download/{{ version }}/Ultimaker_Cura-{{ version }}.AppImage
-    - source_hash: https://github.com/Ultimaker/Cura/releases/download/{{ version }}/Ultimaker_Cura-{{ version }}.AppImage.asc
+    - skip_verify: True
     - user: root
     - group: root
     - mode: 755
