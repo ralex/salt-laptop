@@ -27,6 +27,7 @@ base:
     - common
     - cntlm
     - docker-cds
+    - trivy
 
   'G@os:Debian':
     - match: grain
