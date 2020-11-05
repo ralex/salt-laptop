@@ -16,19 +16,19 @@ base:
     - keybase
     - terraform
 
-  'G@roles:home':
+  'roles:home':
     - match: grain
     - docker
     - kubernetes-client
     - cura
 
-  'G@roles:work':
+  'roles:work':
     - match: grain
     - common
     - cntlm
     - docker-cds
     - trivy
 
-  'G@os:Debian':
+  'os:Debian':
     - match: grain
     - debian
