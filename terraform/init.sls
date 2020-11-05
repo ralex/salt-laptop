@@ -7,7 +7,7 @@ deb [arch=amd64] https://apt.releases.hashicorp.com buster main:
 terraform:
   pkg.installed
 
-{% set version = salt['pillar.get']('terraform:terraformer:provider', '0.8.9') %}
+{% set version = salt['pillar.get']('terraform:terraformer:version', '0.8.9') %}
 {% set provider = salt['pillar.get']('terraform:terraformer:provider', 'all') %}
 /usr/local/bin/terraformer:
   file.managed:
