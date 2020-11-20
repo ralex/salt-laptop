@@ -1,0 +1,9 @@
+{% set lat = salt['pillar.get']('geoloc:lat', '48.8534') %}
+{% set lon = salt['pillar.get']('geoloc:lon', '2.3488') %}
+
+[redshift]
+location-provider=manual
+
+[manual]
+lat={{ lat }}
+lon={{ lon }}

@@ -19,6 +19,7 @@ i3-related-packages:
       - pandoc
       - xautolock
       - playerctl
+      - redshift
 
 pypandoc:
   pip.installed:
