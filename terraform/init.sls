@@ -15,3 +15,11 @@ terraform:
     - skip_verify: True
     - makedirs: True
     - mode: '0755'
+
+{% set version = salt['pillar.get']('terraform:terragrunt:version', '0.25.0') %}
+/usr/local/bin/terragrunt:
+  file.managed:
+    - source: https://github.com/gruntwork-io/terragrunt/releases/download/{{ version }}/terragrunt_linux_amd64
+    - source_hash: https://github.com/gruntwork-io/terragrunt/releases/download/{{ version }}/SHA256SUMS
+    - makedirs: True
+    - mode: '0755'
