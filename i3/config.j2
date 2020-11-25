@@ -301,7 +301,7 @@ exec_always --no-startup-id numlockx on
 exec_always --no-startup-id xautolock -time 5 -locker $i3lock
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper.jpg
-exec_always --no-startup_id redshift
+exec_always --no-startup_id /usr/bin/python3 /usr/bin/redshift-gtk
 
 exec --no-startup-id usbguard-applet-qt
 exec --no-startup-id nextcloud
