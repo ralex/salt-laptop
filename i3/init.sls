@@ -20,6 +20,7 @@ i3-related-packages:
       - xautolock
       - playerctl
       - redshift-gtk
+      - compton
 
 pypandoc:
   pip.installed:
@@ -112,6 +113,14 @@ pulseaudio-ctl:
 /home/{{ user}}/.config/i3/i3status.conf:
   file.managed:
     - source: salt://i3/i3status.conf.j2
+    - template: jinja
+    - user: {{ user }}
+    - group: {{ user }}
+    - mode: 644
+
+/home/{{ user}}/.config/compton.conf:
+  file.managed:
+    - source: salt://i3/compton.conf.j2
     - template: jinja
     - user: {{ user }}
     - group: {{ user }}
