@@ -136,4 +136,5 @@ i3-msg restart for {{ user }}:
       - /bin/true
     - onchanges:
       - file: /home/{{ user}}/.config/i3/i3status.conf
+      - file: /home/{{ user}}/.config/compton.conf
 {% endfor %}
