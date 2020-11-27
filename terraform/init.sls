@@ -23,3 +23,12 @@ terraform:
     - source_hash: https://github.com/gruntwork-io/terragrunt/releases/download/v{{ version }}/SHA256SUMS
     - makedirs: True
     - mode: '0755'
+
+deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ buster main:
+  pkgrepo.managed:
+    - humanname: Azure cli
+    - file: /etc/apt/sources.list.d/azure-cli.list
+    - key_url: https://packages.microsoft.com/keys/microsoft.asc
+
+azure-cli:
+  pkg.installed
