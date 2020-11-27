@@ -20,11 +20,11 @@ testing-wise:
     - contents: |
         Package: *
         Pin: release a=testing
-        Pin-Priority: 700
+        Pin-Priority: 500
 
         Package: *
         Pin: release a=stable
-        Pin-Priority: 650
+        Pin-Priority: 500
 
         Package: *
         Pin: release n=sid
