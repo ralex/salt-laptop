@@ -1,0 +1,13 @@
+{% set docker_registry_url = salt['pillar.get']('docker:registry_url', 'https://hub.docker.com') %}
+# Docker registry search function
+DOCKER_REGISTRY={{ docker_registry_url }}
+
+registry_search() { curl -s ${DOCKER_REGISTRY}/v2/${1}/tags/list | jq -rS .tags[] | sort -V; }
+
+_registry_search() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local list=$(curl -s ${DOCKER_REGISTRY}/v2/_catalog?n=100000 | jq -rS .repositories[])
+    COMPREPLY=( $(compgen -W "${list}" -- $cur ))
+}
+
+complete -F _registry_search registry_search
