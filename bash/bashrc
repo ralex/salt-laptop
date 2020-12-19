@@ -156,7 +156,7 @@ eval "$(_MOLECULE_COMPLETE=source molecule)"
 
 for file in ~/.bashrc.d/*.bashrc;
 do
-source “$file”
+source $file
 done
 
 # For i3 and gnome3 better integration
