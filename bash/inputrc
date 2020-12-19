@@ -1,0 +1,7 @@
+# Put this in ~/.inputrc
+# Then type "ssh" + ↑ or ↓ to get your latest ssh connections
+
+# arrow up
+"\e[A":history-search-backward
+# arrow down
+"\e[B":history-search-forward
