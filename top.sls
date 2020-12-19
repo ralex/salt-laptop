@@ -1,7 +1,7 @@
 base:
   '*':
     - salt
-    - bashrc
+    - bash
     - git
     - i3
     - sddm
