@@ -21,6 +21,7 @@ i3-related-packages:
       - playerctl
       - redshift-gtk
       - compton
+      - wmctrl
 
 pypandoc:
   pip.installed:
@@ -54,6 +55,14 @@ pulseaudio-ctl:
       - git: https://github.com/ralex/pulseaudio-ctl
     - onchanges:
       - git: https://github.com/ralex/pulseaudio-ctl
+
+{% set nuke_version = salt['pillar.get']('nuke:version', '5.1.1') %}
+/usr/local/bin/nuke:
+  file.managed:
+    - source: https://github.com/Matt-Gleich/nuke/releases/download/v{{ nuke_version }}/nuke_{{ nuke_version }}_linux_amd64.tar.gz
+    - source_hash: https://github.com/Matt-Gleich/nuke/releases/download/v{{ nuke_version }}/nuke_{{ nuke_version }}_checksums.txt
+    - makedirs: True
+    - mode: '0755'
 
 {% for user in pillar.get('users', {}) %}
 /home/{{ user }}/.config/pulseaudio-ctl/config:
@@ -124,6 +133,14 @@ pulseaudio-ctl:
     - template: jinja
     - user: {{ user }}
     - group: {{ user }}
+    - mode: 644
+
+/home/{{ user }}/.config/nuke/config.yml:
+  file.managed:
+    - source: salt://i3/nuke_config.yml
+    - user: {{ user }}
+    - group: {{ user }}
+    - makedirs: True
     - mode: 644
 {% endfor %}
 
