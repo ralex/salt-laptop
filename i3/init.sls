@@ -66,11 +66,13 @@ pulseaudio-ctl:
     - makedirs: True
     - user: root
     - group: root
-    - mode: '0755'
 
 /usr/local/bin/nuke:
   file.managed:
     - source: /usr/src/nuke/nuke
+    - user: root
+    - group: root
+    - mode: '0755'
     - require:
       - archive: /usr/src/nuke
 
