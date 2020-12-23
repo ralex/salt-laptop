@@ -1,4 +1,4 @@
-{% from "map.jinja" import kubernetes with context %}
+{% from "kubernetes-client/map.jinja" import kubernetes with context %}
 
 deb https://apt.kubernetes.io/ kubernetes-xenial main:
   pkgrepo.managed:
