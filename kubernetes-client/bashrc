@@ -3,4 +3,8 @@ source <(kubectl completion bash)
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Add Kubernetes context informations to user prompt
+
+export KUBE_PS1_SYMBOL_ENABLE=false
+export KUBE_PS1_DIVIDER='/'
 source /usr/local/share/kube-ps1/kube-ps1.sh
+kubeoff
