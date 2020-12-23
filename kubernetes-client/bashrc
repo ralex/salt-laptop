@@ -1,0 +1,7 @@
+# Kubernetes completion + krew path
+source <(kubectl completion bash)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Add Kubernetes context informations to user prompt
+source /usr/local/share/kube-ps1/kube-ps1.sh
+PS1='[\u@\h \W $(kube_ps1)]\$ '

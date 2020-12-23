@@ -144,10 +144,6 @@ export PATH="$PATH:$HOME/.scripts:$HOME/.local/bin"
 
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
-# Kubernetes completion + krew path
-source <(kubectl completion bash)
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
 # Minikube completion
 source <(minikube completion bash)
 
