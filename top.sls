@@ -11,6 +11,7 @@ base:
     - signal
     - spotify
     - vagrant-libvirt
+    - kubernetes-client
     - minikube
     - vim
     - vscode
@@ -20,7 +21,6 @@ base:
   'roles:home':
     - match: grain
     - docker
-    - kubernetes-client
     - cura
 
   'roles:work':
