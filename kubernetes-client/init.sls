@@ -1,4 +1,4 @@
-{% from "kubernetes-client/map.jinja" import kubernetes with context %}
+{% from "kubernetes-client/map.jinja" import kubernetes_client with context %}
 
 deb https://apt.kubernetes.io/ kubernetes-xenial main:
   pkgrepo.managed:
@@ -8,7 +8,7 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main:
 
 kubernetes-client-packages:
   pkg.installed:
-    - pkgs: {{ kubernetes.packages }}
+    - pkgs: {{ kubernetes_client.packages }}
 
 https://github.com/ralex/kube-ps1:
   git.latest:
