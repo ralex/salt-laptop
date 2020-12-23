@@ -1,0 +1,10 @@
+{% set role_map = salt['grains.filter_by']({
+    'work': {
+        'packages': ['kubernetes-client']
+    }
+  },
+  grain="roles",
+  default={
+    'packages': ['kubectl', 'kubectx']
+  }
+%}

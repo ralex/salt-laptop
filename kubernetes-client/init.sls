@@ -1,3 +1,5 @@
+{% from "map.jinja" import kubernetes with context %}
+
 deb https://apt.kubernetes.io/ kubernetes-xenial main:
   pkgrepo.managed:
     - humanname: kubectl
@@ -6,9 +8,7 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main:
 
 kubernetes-client-packages:
   pkg.installed:
-    - pkgs:
-      - kubectl
-      - kubectx
+    - pkgs: {{ kubernetes.packages }}
 
 https://github.com/ralex/kube-ps1:
   git.latest:
