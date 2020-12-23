@@ -25,7 +25,7 @@ ethernet {{ interface }} {
 }
 {%- elif interface.startswith('wlp') %}
 wireless {{ interface }} {
-    format_up = "   %essid "
+    format_up = " %essid"
     format_down = ""
 }
 {%- endif %}
