@@ -85,7 +85,7 @@ if [ "$color_prompt" = yes ]; then
         local __kube_ps1='$(kube_ps1)'
         local __prompt_tail="\[$(tput bold)\]\[\033[38;5;24m\]\\$\[$(tput sgr0)\]"
         local __last_color="\[\033[00m\]"
-        export PS1="$__user$__at$__host$__cur_location$__git_branch_color$__git_branch$__kube_ps1 $__prompt_tail$__last_color "
+        export PS1="$__user$__at$__host$__cur_location$__git_branch_color$__git_branch$__last_color$__kube_ps1 $__prompt_tail$__last_color "
     }
     color_my_prompt
 else
