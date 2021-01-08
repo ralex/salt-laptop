@@ -147,6 +147,14 @@ pulseaudio-ctl:
     - group: {{ user }}
     - mode: 644
 
+/home/{{ user }}/.config/redshift.conf:
+  file.managed:
+    - source: salt://i3/redshift.conf.j2
+    - user: {{ user }}
+    - group: {{ user }}
+    - makedirs: True
+    - mode: 644
+
 /home/{{ user }}/.config/nuke/config.yml:
   file.managed:
     - source: salt://i3/nuke_config.yml
