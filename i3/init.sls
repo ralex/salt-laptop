@@ -150,9 +150,9 @@ pulseaudio-ctl:
 /home/{{ user }}/.config/redshift.conf:
   file.managed:
     - source: salt://i3/redshift.conf.j2
+    - template: jinja
     - user: {{ user }}
     - group: {{ user }}
-    - makedirs: True
     - mode: 644
 
 /home/{{ user }}/.config/nuke/config.yml:
