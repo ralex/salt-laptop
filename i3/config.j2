@@ -33,7 +33,7 @@ set $urgent-bg-color     #008cff
 # Define monitor
 set $screen1             "DP-1-3"
 set $screen2             "DP-1-2"
-set $screen3             "eDP-1"
+set $laptop              "eDP-1"
 set $homescreen          "DP-1"
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -191,9 +191,9 @@ workspace $ws4 output $screen2
 workspace $ws5 output $screen2
 workspace $ws6 output $screen2
 workspace $ws7 output $screen2
-workspace $ws8 output $screen3
-workspace $ws9 output $screen3
-workspace $ws10 output $screen3
+workspace $ws8 output $laptop
+workspace $ws9 output $laptop
+workspace $ws10 output $laptop
 
 
 # reload the configuration file
@@ -281,7 +281,7 @@ bar {
 
 bar {
     output $screen2
-    output $screen3
+    output $laptop
     output $homescreen
     tray_output primary
     separator_symbol "⋮"
