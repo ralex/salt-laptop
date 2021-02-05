@@ -31,10 +31,8 @@ set $inactive-text-color #e7e8eb
 set $urgent-bg-color     #008cff
 
 # Define monitor
-set $screen1             "DP-1-3"
-set $screen2             "DP-1-2"
+set $hdmi                "DP-1-3"
 set $laptop              "eDP-1"
-set $homescreen          "DP-1"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -184,13 +182,13 @@ for_window [class="NSGClient"] sticky enable
 
 # Default monitor for each workspace
 
-workspace $ws1 output $screen1
-workspace $ws2 output $screen2
-workspace $ws3 output $screen2
-workspace $ws4 output $screen2
-workspace $ws5 output $screen2
-workspace $ws6 output $screen2
-workspace $ws7 output $screen2
+workspace $ws1 output $hdmi
+workspace $ws2 output $hdmi
+workspace $ws3 output $hdmi
+workspace $ws4 output $hdmi
+workspace $ws5 output $hdmi
+workspace $ws6 output $hdmi
+workspace $ws7 output $hdmi
 workspace $ws8 output $laptop
 workspace $ws9 output $laptop
 workspace $ws10 output $laptop
@@ -261,28 +259,9 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-
 bar {
-    output $screen1
-    tray_output none
-    separator_symbol "⋮"
-    #status_command i3status -c ~/.config/i3/i3status.conf  | python3 ~/.scripts/i3status/i3status.py
-    bindsym button4 nop
-    bindsym button5 nop
-    colors {
-        background $bg-color2
-        separator #757575
-        #                  border             background         text
-        focused_workspace  $bg-color          $bg-color          $text-color
-        inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-        urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-    }
-}
-
-bar {
-    output $screen2
+    output $hdmi
     output $laptop
-    output $homescreen
     tray_output primary
     separator_symbol "⋮"
     status_command i3status -c ~/.config/i3/i3status.conf  | python3 ~/.scripts/i3status/i3status.py
