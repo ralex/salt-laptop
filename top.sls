@@ -22,6 +22,7 @@ base:
     - match: grain
     - docker
     - cura
+    - tailscale
 
   'roles:work':
     - match: grain
