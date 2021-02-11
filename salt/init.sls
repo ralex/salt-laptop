@@ -10,6 +10,13 @@ salt-minion:
     - group: root
     - mode: 644
 
+/etc/salt/minion.d/fileserver.conf:
+  file.managed:
+    - source: salt://salt/fileserver.conf
+    - user: root
+    - group: root
+    - mode: 644
+
 salt-call --local state.apply -l error:
   cron.present:
     - user: root
