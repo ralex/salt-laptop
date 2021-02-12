@@ -8,7 +8,7 @@ file_ignore_glob:
   - '\*.md'
 
 gitfs_remotes:
-  - https://github.com/ralex/salt-top-laptop.git
+  - https://github.com/ralex/salt-laptop.git
   {% for salt_gitfs_remotes in salt['pillar.get']('salt:gitfs_remotes', []) %}
   - {{ salt_gitfs_remotes }}
   {% endfor %}
