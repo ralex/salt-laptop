@@ -1,5 +1,5 @@
-{% set salt_gitfs_remotes = salt['pillar.get']('salt:gitfs_remotes', []) %}
-{% set salt_ext_pillar = salt['pillar.get']('salt:ext_pillar', []) %}
+{%- set salt_gitfs_remotes = salt['pillar.get']('salt:gitfs_remotes', []) %}
+{%- set salt_ext_pillar = salt['pillar.get']('salt:ext_pillar', []) %}
 fileserver_backend:
   - git
 
