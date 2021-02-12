@@ -12,7 +12,8 @@ salt-minion:
 
 /etc/salt/minion.d/fileserver.conf:
   file.managed:
-    - source: salt://salt/fileserver.conf
+    - source: salt://salt/fileserver.conf.j2
+    - template: jinja
     - user: root
     - group: root
     - mode: 644
