@@ -1,5 +1,3 @@
-{%- set salt_gitfs_remotes = salt['pillar.get']('salt:gitfs_remotes', []) %}
-{%- set salt_ext_pillar = salt['pillar.get']('salt:ext_pillar', []) %}
 fileserver_backend:
   - git
 
@@ -11,11 +9,15 @@ file_ignore_glob:
 
 gitfs_remotes:
   - https://github.com/ralex/salt-top-laptop.git
+  {% for salt_gitfs_remotes in salt['pillar.get']('salt:gitfs_remotes', []) %}
   - {{ salt_gitfs_remotes }}
+  {% endfor %}
 
 ext_pillar:
   - git:
     - master git@git.ralex.fr:salt/pillar.git
+    {% for salt_ext_pillar in salt['pillar.get']('salt:ext_pillar', []) %}
     - {{ salt_ext_pillar }}
+    {% endfor %}
 
 log_level: error
