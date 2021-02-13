@@ -8,15 +8,16 @@ file_ignore_glob:
   - '\*.md'
 
 gitfs_remotes:
-  - https://github.com/ralex/salt-base.git
+  - https://github.com/ralex/salt-base
   {%- for salt_gitfs_remotes in salt['pillar.get']('salt:gitfs_remotes') %}
   - {{ salt_gitfs_remotes }}
   {%- endfor %}
 
 ext_pillar:
-  - master git@git.ralex.fr:salt/pillar.git
-  {%- for salt_ext_pillar in salt['pillar.get']('salt:ext_pillar') %}
-  - {{ salt_ext_pillar }}
-  {%- endfor %}
+  - git:
+    - master git@git.ralex.fr:salt/pillar.git
+    {%- for salt_ext_pillar in salt['pillar.get']('salt:ext_pillar') %}
+    - {{ salt_ext_pillar }}
+    {%- endfor %}
 
 log_level: error
