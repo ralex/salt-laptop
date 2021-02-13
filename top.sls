@@ -1,7 +1,4 @@
 base:
-  '*':
-    - salt
-
   'roles:laptop':
     - match: grain
     - bash
