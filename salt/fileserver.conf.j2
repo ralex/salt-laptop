@@ -14,10 +14,9 @@ gitfs_remotes:
   {%- endfor %}
 
 ext_pillar:
-  - git:
-    - 'master git@git.ralex.fr:salt/pillar.git'
-    {%- for salt_ext_pillar in salt['pillar.get']('salt:ext_pillar') %}
-    - {{ salt_ext_pillar }}
-    {%- endfor %}
+  - master git@git.ralex.fr:salt/pillar.git
+  {%- for salt_ext_pillar in salt['pillar.get']('salt:ext_pillar') %}
+  - {{ salt_ext_pillar }}
+  {%- endfor %}
 
 log_level: error
