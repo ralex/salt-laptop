@@ -15,7 +15,7 @@ gitfs_remotes:
 
 ext_pillar:
   - git:
-    - master git@git.ralex.fr:salt/pillar.git
+    - 'master git@git.ralex.fr:salt/pillar.git'
     {%- for salt_ext_pillar in salt['pillar.get']('salt:ext_pillar') %}
     - {{ salt_ext_pillar }}
     {%- endfor %}
