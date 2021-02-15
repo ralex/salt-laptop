@@ -6,7 +6,7 @@ deb https://deb.nodesource.com/node_14.x buster main:
 deb https://dl.yarnpkg.com/debian/ stable main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/yarn.list
-    - key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    - key_url: https://dl.yarnpkg.com/debian/pubkey.gpg#1
 
 nodejs-packages:
   pkg.installed:
