@@ -7,6 +7,7 @@ general {
     color_bad       = '#e25a5a'
 }
 
+order += "ethernet tailscale0"
 order += "ethernet Citrix_VA"
 {%- for interface in grains['ip4_interfaces'].keys() %}
 {%- if interface.startswith('en') %}
@@ -20,19 +21,24 @@ order += "tztime local"
 {%- for interface in grains['ip4_interfaces'].keys() %}
 {%- if interface.startswith('en') %}
 ethernet {{ interface }} {
-    format_up = ""
-    format_down = ""
+    format_up = "🖧"
+    format_down = ""
 }
 {%- elif interface.startswith('wlp') %}
 wireless {{ interface }} {
     format_up = ""
-    format_down = ""
+    format_down = ""
 }
 {%- endif %}
 {%- endfor %}
 
 ethernet Citrix_VA {
     format_up = ""
+    format_down = ""
+}
+
+ethernet tailscale0 {
+    format_up = ""
     format_down = ""
 }
 
