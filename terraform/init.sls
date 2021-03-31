@@ -25,7 +25,7 @@ terraform:
     - mode: '0755'
 
 {% set version = salt['pillar.get']('terraform:terraform-docs:version', '0.12.1') %}
-/usr/local/bin/terragrunt:
+/usr/local/bin/terraform-docs:
   file.managed:
     - source: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/terraform-docs-v{{ version }}-linux-amd64
     - source_hash: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/SHA256SUMS
