@@ -28,7 +28,7 @@ terraform:
 /usr/local/bin/terraform-docs:
   file.managed:
     - source: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/terraform-docs-v{{ version }}-linux-amd64
-    - source_hash: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/SHA256SUMS
+    - source_hash: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/terraform-docs-v{{ version }}.sha256sum
     - makedirs: True
     - mode: '0755'
 
