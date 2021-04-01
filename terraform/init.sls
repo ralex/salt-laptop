@@ -32,6 +32,13 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
+{% set version = salt['pillar.get']('terraform:tfsec:version', '0.39.14') %}
+/usr/local/bin/tfsec:
+  file.managed:
+    - source: https://github.com/tfsec/tfsec/releases/download/v{{ version }}/tfsec-linux-amd64
+    - makedirs: True
+    - mode: '0755'
+
 deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ buster main:
   pkgrepo.managed:
     - humanname: Azure cli
