@@ -36,6 +36,7 @@ terraform:
 /usr/local/bin/tfsec:
   file.managed:
     - source: https://github.com/tfsec/tfsec/releases/download/v{{ version }}/tfsec-linux-amd64
+    - skip_verify: True
     - makedirs: True
     - mode: '0755'
 
