@@ -1,28 +1,28 @@
 i3-related-packages:
   pkg.installed:
     - pkgs:
+      - arc-theme
       - bc
-      - git
-      - i3-wm
-      - i3status
-      - i3lock
+      - compton
+      - dunst
       - feh
       - fonts-font-awesome
-      - arc-theme
-      - rofi
-      - dunst
-      - scrot
+      - git
+      - i3-wm
+      - i3lock
+      - i3status
       - imagemagick
       - libnotify-bin
+      - numlockx
+      - pandoc
+      - playerctl
       - python3
       - python3-pip
-      - pandoc
-      - xautolock
-      - numlockx
-      - playerctl
       - redshift-gtk
-      - compton
+      - rofi
+      - scrot
       - wmctrl
+      - xautolock
 
 pypandoc:
   pip.installed:
