@@ -1,2 +1,2 @@
 # salt-laptop
-Saltstack top file for masterless minion on a laptop
+Saltstack states for masterless minion on a laptop
