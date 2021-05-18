@@ -3,7 +3,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $lock "xsecurelock"
+set $lock "env XSECURELOCK_AUTH_WARNING_COLOR="#fecf6a" XSECURELOCK_SAVER=saver_mplayer XSECURELOCK_AUTH_BACKGROUND_COLOR="#019875" XSECURELOCK_FONT="SFNS Display" XSECURELOCK_LIST_VIDEOS_COMMAND="find ~/Vidéos -type f" xsecurelock"
 set $ws1 "1 "
 set $ws2 "2 "
 set $ws3 "3 "
@@ -68,7 +68,7 @@ bindsym Mod1+Tab exec rofi -show window -fake-transparency -font "SFNS Display 1
 #bindsym $mod+m focus right
 
 # i3lock screen
-bindsym $mod+l exec $lock
+bindsym $mod+l exec xset s activate
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -276,6 +276,8 @@ bar {
 }
 
 # startup
+exec --no-startup-id xset s 300 5
+
 exec_always --no-startup-id ~/.scripts/xrandr_auto
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id numlockx on
