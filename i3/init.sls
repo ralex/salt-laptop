@@ -9,10 +9,10 @@ i3-related-packages:
       - fonts-font-awesome
       - git
       - i3-wm
-      - i3lock
       - i3status
       - imagemagick
       - libnotify-bin
+      - mplayer
       - numlockx
       - pandoc
       - playerctl
@@ -22,7 +22,8 @@ i3-related-packages:
       - rofi
       - scrot
       - wmctrl
-      - xautolock
+      - xss-lock
+      - xsecurelock
 
 pypandoc:
   pip.installed:
@@ -159,6 +160,14 @@ pulseaudio-ctl:
 /home/{{ user }}/.config/nuke/config.yml:
   file.managed:
     - source: salt://i3/nuke_config.yml
+    - user: {{ user }}
+    - group: {{ user }}
+    - makedirs: True
+    - mode: 644
+
+/home/{{ user }}/.bashrc.d/xsecurelock.bashrc:
+  file.managed:
+    - source: salt://i3/xsecurelock.bashrc
     - user: {{ user }}
     - group: {{ user }}
     - makedirs: True

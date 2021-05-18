@@ -3,7 +3,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $i3lock "~/.scripts/lock"
+set $lock "xsecurelock"
 set $ws1 "1 "
 set $ws2 "2 "
 set $ws3 "3 "
@@ -68,7 +68,7 @@ bindsym Mod1+Tab exec rofi -show window -fake-transparency -font "SFNS Display 1
 #bindsym $mod+m focus right
 
 # i3lock screen
-bindsym $mod+l exec $i3lock
+bindsym $mod+l exec $lock
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -279,7 +279,7 @@ bar {
 exec_always --no-startup-id ~/.scripts/xrandr_auto
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id numlockx on
-exec_always --no-startup-id xautolock -time 5 -locker $i3lock
+exec_always --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- $lock
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper.jpg
 exec_always --no-startup-id compton
