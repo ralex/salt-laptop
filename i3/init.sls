@@ -164,14 +164,6 @@ pulseaudio-ctl:
     - group: {{ user }}
     - makedirs: True
     - mode: 644
-
-/home/{{ user }}/.bashrc.d/xsecurelock.bashrc:
-  file.managed:
-    - source: salt://i3/xsecurelock.bashrc
-    - user: {{ user }}
-    - group: {{ user }}
-    - makedirs: True
-    - mode: 644
 {% endfor %}
 
 {% for user in pillar.get('users', {}) %}
