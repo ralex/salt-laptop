@@ -68,7 +68,7 @@ bindsym Mod1+Tab exec rofi -show window -fake-transparency -font "SFNS Display 1
 #bindsym $mod+m focus right
 
 # i3lock screen
-bindsym $mod+l exec xset s activate
+bindsym $mod+l exec $lock
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -276,9 +276,6 @@ bar {
 }
 
 # startup
-exec --no-startup-id xset s 300 5
-exec --no-startup-id xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- $lock
-
 exec_always --no-startup-id ~/.scripts/xrandr_auto
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id numlockx on
