@@ -3,7 +3,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $lock ~/.scripts/lock"
+set $lock ~/.scripts/lock
 set $ws1 "1 "
 set $ws2 "2 "
 set $ws3 "3 "
@@ -68,7 +68,7 @@ bindsym Mod1+Tab exec rofi -show window -fake-transparency -font "SFNS Display 1
 #bindsym $mod+m focus right
 
 # i3lock screen
-bindsym $mod+l exec $lock
+bindsym $mod+l exec xset s activate
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
