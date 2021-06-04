@@ -277,7 +277,7 @@ bar {
 
 # startup
 exec --no-startup-id xset s 300 5
-exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- $lock
+exec --no-startup-id xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- $lock
 
 exec_always --no-startup-id ~/.scripts/xrandr_auto
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
