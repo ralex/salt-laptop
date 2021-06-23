@@ -1,4 +1,4 @@
-{% for key, user in pillar.get('users', {}).iteritems() %}
+{% for key, user in pillar.get('users', {}).items() %}
 /home/{{ key }}/.bashrc:
   file.managed:
     - source: salt://bash/bashrc
