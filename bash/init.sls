@@ -2,14 +2,14 @@
 /home/{{ user }}/.bashrc:
   file.managed:
     - source: salt://bash/bashrc
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
 /home/{{ user }}/.inputrc:
   file.managed:
     - source: salt://bash/inputrc
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 {% endfor %}
