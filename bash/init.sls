@@ -1,15 +1,15 @@
-{% for key, user in pillar.get('users', {}) %}
+{% for key, user in pillar.get('users', {}).iteritems() %}
 /home/{{ key }}/.bashrc:
   file.managed:
     - source: salt://bash/bashrc
-    - user: {{ user.uid.value }}
-    - group: {{ user.gid.value }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
 /home/{{ key }}/.inputrc:
   file.managed:
     - source: salt://bash/inputrc
-    - user: {{ user.uid.value }}
-    - group: {{ user.gid.value }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 {% endfor %}
