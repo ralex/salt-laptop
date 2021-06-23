@@ -16,11 +16,11 @@ https://github.com/ralex/kube-ps1:
     - target: /usr/local/share/kube-ps1
     - user: root
 
-{% for user in pillar.get('users', {}) %}
-/home/{{ user }}/.bashrc.d/kubernetes-client.bashrc:
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.bashrc.d/kubernetes-client.bashrc:
   file.managed:
     - source: salt://kubernetes-client/bashrc
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 {% endfor %}

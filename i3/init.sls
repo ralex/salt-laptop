@@ -78,15 +78,15 @@ pulseaudio-ctl:
     - require:
       - archive: /usr/src/nuke
 
-{% for user in pillar.get('users', {}) %}
-/home/{{ user }}/.config/pulseaudio-ctl/config:
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.config/pulseaudio-ctl/config:
   file.managed:
     - source: salt://i3/pulseaudio-ctl.config
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
-/var/lib/AccountsService/users/{{ user }}:
+/var/lib/AccountsService/users/{{ key }}:
   file.managed:
     - contents: |
         [User]
@@ -97,7 +97,7 @@ pulseaudio-ctl:
     - group: root
     - mode: 644
 
-/home/{{ user }}/.config/gtk-3.0/settings.ini:
+/home/{{ key }}/.config/gtk-3.0/settings.ini:
   file.managed:
     - contents: |
         [Settings]
@@ -105,63 +105,63 @@ pulseaudio-ctl:
         gtk-theme-name = Arc
         gtk-font-name = DejaVu Sans 8
         
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
-/home/{{ user }}/.config/dunst/dunstrc:
+/home/{{ key }}/.config/dunst/dunstrc:
   file.managed:
     - source: salt://i3/dunstrc
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - makedirs: True
     - mode: 644
 
-/home/{{ user}}/.config/i3/rofi.conf:
+/home/{{ key }}/.config/i3/rofi.conf:
   file.managed:
     - source: salt://i3/rofi.conf.j2
     - template: jinja
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
-/home/{{ user}}/.config/i3/config:
+/home/{{ key }}/.config/i3/config:
   file.managed:
     - source: salt://i3/config.j2
     - template: jinja
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
-/home/{{ user}}/.config/i3/i3status.conf:
+/home/{{ key }}/.config/i3/i3status.conf:
   file.managed:
     - source: salt://i3/i3status.conf.j2
     - template: jinja
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
-/home/{{ user}}/.config/compton.conf:
+/home/{{ key }}/.config/compton.conf:
   file.managed:
     - source: salt://i3/compton.conf.j2
     - template: jinja
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
-/home/{{ user }}/.config/redshift.conf:
+/home/{{ key  }}/.config/redshift.conf:
   file.managed:
     - source: salt://i3/redshift.conf.j2
     - template: jinja
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 
-/home/{{ user }}/.config/nuke/config.yml:
+/home/{{ key }}/.config/nuke/config.yml:
   file.managed:
     - source: salt://i3/nuke_config.yml
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - makedirs: True
     - mode: 644
 {% endfor %}

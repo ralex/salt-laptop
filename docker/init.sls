@@ -18,13 +18,13 @@ docker:
       - {{ user }}
     {% endfor %}
 
-{% for user in pillar.get('users', {}) %}
-/home/{{ user }}/.bashrc.d/docker.bashrc:
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.bashrc.d/docker.bashrc:
   file.managed:
     - source: salt://docker/docker.bashrc.j2
     - template: jinja
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
     - makedirs: true
 {% endfor %}

@@ -6,12 +6,12 @@
     - group: root
     - mode: 0755
 
-{% for user in pillar.get('users', {}) %}
-/home/{{ user }}/.minikube/config/config.json:
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.minikube/config/config.json:
   file.managed:
     - source: salt://minikube/config.json
     - makedirs: True
-    - user: {{ user }}
-    - group: {{ user }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 {% endfor %}
