@@ -19,6 +19,8 @@ openssh-client:
     - group: {{ user.gid }}
     - mode: 644
     - template: jinja
+    - defaults:
+        user: {{ key }}
 
 ssh-agent@{{ key }}.service:
   service.running:
