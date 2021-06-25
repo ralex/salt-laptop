@@ -1,6 +1,9 @@
 [Unit]
 Description=SSH key agent
 
+Requires=sssd
+After=sssd
+
 [Service]
 Type=forking
 Environment=SSH_AUTH_SOCK=/run/user/{{ pillar['users'][user]['uid'] }}/ssh-agent.socket
