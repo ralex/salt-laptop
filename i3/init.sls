@@ -15,6 +15,7 @@ i3-related-packages:
       - mplayer
       - numlockx
       - pandoc
+      - pass
       - playerctl
       - python3
       - python3-pip
