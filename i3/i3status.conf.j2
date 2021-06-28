@@ -12,7 +12,7 @@ order += "ethernet Citrix_VA"
 {%- for interface in grains['ip4_interfaces'].keys() %}
 {%- if interface.startswith('en') %}
 order += "ethernet {{ interface }}"
-{%- elif interface.startswith('wlp') %}
+{%- elif interface.startswith('wl') %}
 order += "wireless {{ interface }}"
 {%- endif %}
 {%- endfor %}
@@ -24,7 +24,7 @@ ethernet {{ interface }} {
     format_up = "🖧"
     format_down = ""
 }
-{%- elif interface.startswith('wlp') %}
+{%- elif interface.startswith('wl') %}
 wireless {{ interface }} {
     format_up = ""
     format_down = ""
