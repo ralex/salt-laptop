@@ -59,11 +59,11 @@ pulseaudio-ctl:
     - onchanges:
       - git: https://github.com/ralex/pulseaudio-ctl
 
-{% set nuke_version = salt['pillar.get']('nuke:version', '5.1.1') %}
+{% set nuke_version = salt['pillar.get']('nuke:version', '5.1.2') %}
 /usr/src/nuke:
   archive.extracted:
-    - source: https://github.com/Matt-Gleich/nuke/releases/download/v{{ nuke_version }}/nuke_{{ nuke_version }}_linux_amd64.tar.gz
-    - source_hash: https://github.com/Matt-Gleich/nuke/releases/download/v{{ nuke_version }}/nuke_{{ nuke_version }}_checksums.txt
+    - source: https://github.com/ralex/nuke/releases/download/v{{ nuke_version }}/nuke_{{ nuke_version }}_linux_amd64.tar.gz
+    - source_hash: https://github.com/ralex/nuke/releases/download/v{{ nuke_version }}/nuke_{{ nuke_version }}_checksums.txt
     - source_hash_name: nuke_{{ nuke_version }}_linux_amd64.tar.gz
     - enforce_toplevel: False
     - makedirs: True
