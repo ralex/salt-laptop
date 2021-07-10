@@ -32,7 +32,11 @@ set $urgent-bg-color     #008cff
 
 # Define monitor
 set $hdmi                "primary"
-set $laptop              "eDP-1|eDP1"
+set $hdmi1               "DP1-1"
+set $hdmi2               "DP1-2"
+set $hdmi3               "DP1-3"
+set $laptop1             "eDP-1"
+set $laptop2             "eDP1"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -180,16 +184,16 @@ for_window [class="NSGClient"] sticky enable
 
 # Default monitor for each workspace
 
-workspace $ws1 output $hdmi
-workspace $ws2 output $hdmi
-workspace $ws3 output $hdmi
-workspace $ws4 output $hdmi
-workspace $ws5 output $hdmi
-workspace $ws6 output $hdmi
-workspace $ws7 output $hdmi
-workspace $ws8 output $laptop
-workspace $ws9 output $laptop
-workspace $ws10 output $laptop
+workspace $ws1 output $hdmi $hdmi1 $hdmi2 $hdmi3
+workspace $ws2 output $hdmi $hdmi1 $hdmi2 $hdmi3
+workspace $ws3 output $hdmi $hdmi1 $hdmi2 $hdmi3
+workspace $ws4 output $hdmi $hdmi1 $hdmi2 $hdmi3
+workspace $ws5 output $hdmi $hdmi1 $hdmi2 $hdmi3
+workspace $ws6 output $hdmi $hdmi1 $hdmi2 $hdmi3
+workspace $ws7 output $hdmi $hdmi1 $hdmi2 $hdmi3
+workspace $ws8 output $laptop1 $laptop2
+workspace $ws9 output $laptop1 $laptop2
+workspace $ws10 output $laptop1 $laptop2
 
 
 # reload the configuration file
@@ -259,7 +263,11 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 bar {
     output $hdmi
-    output $laptop
+    output $hdmi1
+    output $hdmi2
+    output $hdmi3
+    output $laptop1
+    output $laptop2
     tray_output primary
     separator_symbol "⋮"
     status_command i3status -c ~/.config/i3/i3status.conf  | python3 ~/.scripts/i3status/i3status.py
