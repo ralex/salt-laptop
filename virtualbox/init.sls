@@ -1,8 +1,10 @@
-deb https://people.debian.org/~lucas/virtualbox-buster/ ./:
+fasttrack-archive-keyring:
+  pkg.installed
+
+deb https://fasttrack.debian.net/debian-fasttrack/ bullseye-fasttrack main contrib ./:
   pkgrepo.managed:
     - humanname: Virtualbox
     - file: /etc/apt/sources.list.d/virtualbox.list
-    - key_url: https://db.debian.org/fetchkey.cgi?fingerprint=FEDEC1CB337BCF509F43C2243914B532F4DFBE99
 
 virtualbox.packages:
   pkg.installed:

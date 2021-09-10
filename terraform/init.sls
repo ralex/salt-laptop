@@ -1,4 +1,4 @@
-deb [arch=amd64] https://apt.releases.hashicorp.com buster main:
+deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main:
   pkgrepo.managed:
     - humanname: Terraform
     - file: /etc/apt/sources.list.d/terraform.list
@@ -40,7 +40,7 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ buster main:
+deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ bullseye main:
   pkgrepo.managed:
     - humanname: Azure cli
     - file: /etc/apt/sources.list.d/azure-cli.list

@@ -1,4 +1,4 @@
-deb [arch=amd64] https://download.docker.com/linux/debian buster stable:
+deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable:
   pkgrepo.managed:
     - humanname: Docker
     - file: /etc/apt/sources.list.d/docker.list
