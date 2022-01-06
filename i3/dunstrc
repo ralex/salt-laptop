@@ -371,3 +371,6 @@
 #    set_stack_tag = "volume"
 #
 
+[ignore]
+    appname = "Microsoft Teams - Preview"
+    format = ""
