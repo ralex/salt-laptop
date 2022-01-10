@@ -124,6 +124,7 @@ pulseaudio-ctl:
     - template: jinja
     - user: {{ user.uid }}
     - group: {{ user.gid }}
+    - makedirs: True
     - mode: 644
 
 /home/{{ key }}/.config/rofi/theme.rasi:
@@ -132,6 +133,7 @@ pulseaudio-ctl:
     - template: jinja
     - user: {{ user.uid }}
     - group: {{ user.gid }}
+    - makedirs: True
     - mode: 644
 
 /home/{{ key }}/.config/i3/config:
