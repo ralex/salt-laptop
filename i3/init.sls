@@ -55,6 +55,7 @@ https://github.com/ralex/pulseaudio-ctl:
   git.latest:
     - rev: master
     - force_fetch: True
+    - force_reset: True
     - target: /usr/local/src/pulseaudio-ctl
     - user: root
     - require:
