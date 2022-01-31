@@ -44,6 +44,7 @@ i3-pip-packages:
 https://github.com/ralex/pulseaudio-ctl:
   git.latest:
     - rev: master
+    - force_fetch: True
     - target: /usr/local/src/pulseaudio-ctl
     - user: root
     - require:
