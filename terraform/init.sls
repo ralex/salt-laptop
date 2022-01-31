@@ -1,6 +1,5 @@
 deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main:
   pkgrepo.managed:
-    - humanname: Terraform
     - file: /etc/apt/sources.list.d/terraform.list
     - key_url: https://apt.releases.hashicorp.com/gpg
 
@@ -42,7 +41,6 @@ terraform:
 
 deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ bullseye main:
   pkgrepo.managed:
-    - humanname: Azure cli
     - file: /etc/apt/sources.list.d/azure-cli.list
     - key_url: https://packages.microsoft.com/keys/microsoft.asc
 

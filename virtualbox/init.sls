@@ -3,7 +3,6 @@ fasttrack-archive-keyring:
 
 deb https://fasttrack.debian.net/debian-fasttrack/ bullseye-fasttrack main contrib ./:
   pkgrepo.managed:
-    - humanname: Virtualbox
     - file: /etc/apt/sources.list.d/virtualbox.list
 
 virtualbox.packages:
