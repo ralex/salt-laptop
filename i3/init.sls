@@ -1,25 +1,35 @@
 i3-related-packages:
   pkg.installed:
     - pkgs:
+      - arandr
       - arc-theme
       - bc
       - compton
+      - dnsutils
       - dunst
+      - evolution
+      - evolution-ews
       - feh
       - fonts-font-awesome
       - git
+      - gnome-control-center
       - i3-wm
       - i3status
       - imagemagick
+      - jq
       - libnotify-bin
+      - locate
       - mplayer
+      - nextcloud-desktop
       - numlockx
       - pandoc
       - pass
       - playerctl
+      - polybar
       - python3
       - python3-pip
       - redshift-gtk
+      - remmina
       - rofi
       - scrot
       - wmctrl
