@@ -1,6 +1,6 @@
 {% from "kubernetes-client/map.jinja" import kubernetes_client with context %}
 
-deb https://apt.kubernetes.io/ kubernetes-xenial main:
+deb https://apt.kubernetes.io kubernetes-xenial main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/kubernetes.list
     - key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
