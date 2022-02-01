@@ -13,6 +13,9 @@ sony-headphone-client-requirements:
     - enforce_toplevel: False
     - user: root
     - group: root
+
+/usr/local/bin/sony-headphone-client/SonyHeadphonesClient:
+  file.managed:
     - mode: 0755
 
 /usr/share/applications/sony-headphone-client.desktop:
