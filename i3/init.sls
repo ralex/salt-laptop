@@ -36,6 +36,10 @@ i3-related-packages:
       - xss-lock
       - xsecurelock
 
+/usr/share/applications/gnome-control-center.desktop:
+  file.comment:
+    regex: ^OnlyShowIn
+
 pypandoc:
   pip.installed:
     - bin_env: '/usr/bin/pip3'
