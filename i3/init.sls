@@ -38,7 +38,7 @@ i3-related-packages:
 
 /usr/share/applications/gnome-control-center.desktop:
   file.comment:
-    regex: ^OnlyShowIn
+    - regex: ^OnlyShowIn
 
 pypandoc:
   pip.installed:
