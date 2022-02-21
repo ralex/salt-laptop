@@ -1,4 +1,4 @@
-{% set github_token = salt['pillar.get']('github.com:token')
+{% set github_token = salt['pillar.get']('github.com:token') %}
 
 deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main:
   pkgrepo.managed:
