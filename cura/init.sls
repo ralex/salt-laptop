@@ -1,4 +1,9 @@
-{% set version = salt['pillar.get']('cura:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/Ultimaker/Cura/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% if salt['pillar.get']('github.com:token') is defined %}
+{% set curl_header = '-H "Authorization: token '~ github_token ~'"' %}
+{% else %}
+{% set curl_header = '' %}
+{% endif %}
+{% set version = salt['pillar.get']('cura:version', salt['cmd.run']('curl '~ curl_header ~'-sL "https://api.github.com/repos/Ultimaker/Cura/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 
 /opt/cura/Ultimaker_Cura.AppImage:
   file.managed:
