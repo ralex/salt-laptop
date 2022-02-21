@@ -20,8 +20,8 @@ terraform:
 {% set version = salt['pillar.get']('terraform:terragrunt:version', salt['cmd.run']('curl -H "Authorization: token '~ github_token ~'" -sL "https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/terragrunt:
   file.managed:
-    - source: https://github.com/gruntwork-io/terragrunt/releases/download/v{{ version }}/terragrunt_linux_amd64
-    - source_hash: https://github.com/gruntwork-io/terragrunt/releases/download/v{{ version }}/SHA256SUMS
+    - source: https://github.com/gruntwork-io/terragrunt/releases/download/{{ version }}/terragrunt_linux_amd64
+    - source_hash: https://github.com/gruntwork-io/terragrunt/releases/download/{{ version }}/SHA256SUMS
     - makedirs: True
     - mode: '0755'
 
