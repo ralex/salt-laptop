@@ -28,6 +28,7 @@ terraform:
   archive.extracted:
     - source: https://github.com/terraform-docs/terraform-docs/releases/download/{{ version }}/terraform-docs-{{ version }}-linux-amd64.tar.gz
     - source_hash: https://github.com/terraform-docs/terraform-docs/releases/download/{{ version }}/terraform-docs-{{ version }}.sha256sum
+    - enforce_toplevel: False
     - makedirs: True
     - mode: '0755'
 
