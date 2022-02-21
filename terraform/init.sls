@@ -6,7 +6,7 @@ deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main:
 terraform:
   pkg.installed
 
-{% set version = salt['pillar.get']('terraform:terraformer:version', salt['cmd.run']('curl -sL https://api.github.com/repos/GoogleCloudPlatform/terraformer/releases/latest | jq -r ".tag_name"')) %}
+{% set version = salt['pillar.get']('terraform:terraformer:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/GoogleCloudPlatform/terraformer/releases/latest" | jq -r ".tag_name"')) %}
 {% set provider = salt['pillar.get']('terraform:terraformer:provider', 'all') %}
 /usr/local/bin/terraformer:
   file.managed:
