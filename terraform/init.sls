@@ -26,15 +26,15 @@ terraform:
 {% set version = salt['pillar.get']('terraform:terraform-docs:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/terraform-docs:
   file.managed:
-    - source: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/terraform-docs-v{{ version }}-linux-amd64
-    - source_hash: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/terraform-docs-v{{ version }}.sha256sum
+    - source: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/terraform-docs-{{ version }}-linux-amd64
+    - source_hash: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/terraform-docs-{{ version }}.sha256sum
     - makedirs: True
     - mode: '0755'
 
 {% set version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/tfsec:
   file.managed:
-    - source: https://github.com/tfsec/tfsec/releases/download/v{{ version }}/tfsec-linux-amd64
+    - source: https://github.com/tfsec/tfsec/releases/download/{{ version }}/tfsec-linux-amd64
     - skip_verify: True
     - makedirs: True
     - mode: '0755'
