@@ -1,4 +1,4 @@
-{% set version = salt['pillar.get']('cura:version', '4.5.0') %}
+{% set version = salt['pillar.get']('cura:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/Ultimaker/Cura/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 
 /opt/cura/Ultimaker_Cura.AppImage:
   file.managed:
