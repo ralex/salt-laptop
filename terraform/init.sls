@@ -31,6 +31,8 @@ terraform:
     - enforce_toplevel: False
     - makedirs: True
     - mode: '0755'
+    - user: root
+    - group: root
 
 {% set version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/tfsec:
