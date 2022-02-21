@@ -12,7 +12,7 @@ deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main:
 terraform:
   pkg.installed
 
-{% set version = salt['pillar.get']('terraform:terraformer:version', salt['cmd.run']('curl '~ curl_header ~'" -sL "https://api.github.com/repos/GoogleCloudPlatform/terraformer/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set version = salt['pillar.get']('terraform:terraformer:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/GoogleCloudPlatform/terraformer/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 {% set provider = salt['pillar.get']('terraform:terraformer:provider', 'all') %}
 /usr/local/bin/terraformer:
   file.managed:
@@ -21,7 +21,7 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-{% set version = salt['pillar.get']('terraform:terragrunt:version', salt['cmd.run']('curl '~ curl_header ~'" -sL "https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set version = salt['pillar.get']('terraform:terragrunt:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/terragrunt:
   file.managed:
     - source: https://github.com/gruntwork-io/terragrunt/releases/download/{{ version }}/terragrunt_linux_amd64
@@ -29,7 +29,7 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-{% set version = salt['pillar.get']('terraform:terraform-docs:version', salt['cmd.run']('curl '~ curl_header ~'" -sL "https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set version = salt['pillar.get']('terraform:terraform-docs:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/terraform-docs:
   archive.extracted:
     - source: https://github.com/terraform-docs/terraform-docs/releases/download/{{ version }}/terraform-docs-{{ version }}-linux-amd64.tar.gz
@@ -40,7 +40,7 @@ terraform:
     - user: root
     - group: root
 
-{% set version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl '~ curl_header ~'" -sL "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/tfsec:
   file.managed:
     - source: https://github.com/tfsec/tfsec/releases/download/{{ version }}/tfsec-linux-amd64
