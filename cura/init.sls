@@ -1,5 +1,5 @@
 {% if salt['pillar.get']('github.com:token') is defined %}
-{% set curl_header = '-H "Authorization: token '~ github_token ~'"' %}
+{% set curl_header = '-H "Authorization: token '~ salt['pillar.get']('github.com:token') ~'"' %}
 {% else %}
 {% set curl_header = '' %}
 {% endif %}
