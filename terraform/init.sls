@@ -15,7 +15,7 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-{% set version = salt['pillar.get']('terraform:terragrunt:version', '0.25.0') %}
+{% set version = salt['pillar.get']('terraform:terragrunt:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/terragrunt:
   file.managed:
     - source: https://github.com/gruntwork-io/terragrunt/releases/download/v{{ version }}/terragrunt_linux_amd64
@@ -23,7 +23,7 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-{% set version = salt['pillar.get']('terraform:terraform-docs:version', '0.12.1') %}
+{% set version = salt['pillar.get']('terraform:terraform-docs:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/terraform-docs:
   file.managed:
     - source: https://github.com/terraform-docs/terraform-docs/releases/download/v{{ version }}/terraform-docs-v{{ version }}-linux-amd64
@@ -31,7 +31,7 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-{% set version = salt['pillar.get']('terraform:tfsec:version', '0.39.14') %}
+{% set version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl -sL "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/tfsec:
   file.managed:
     - source: https://github.com/tfsec/tfsec/releases/download/v{{ version }}/tfsec-linux-amd64
