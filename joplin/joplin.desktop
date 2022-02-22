@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Joplin
 Comment=Joplin for Desktop
-Exec=${HOME}/.joplin/Joplin.AppImage ${SANDBOXPARAM} %u
+Exec=/opt/joplin/Joplin.AppImage ${SANDBOXPARAM} %u
 Icon=joplin
 StartupWMClass=Joplin
 Type=Application
