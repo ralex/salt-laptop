@@ -7,8 +7,8 @@
 
 /opt/joplin/Joplin.AppImage:
   file.managed:
-    - source: https://github.com/laurent22/joplin/releases/download/v{{ version }}/Joplin-{{ version }}.AppImage
-    - skip_verify: True
+    - source: https://github.com/laurent22/joplin/releases/download/{{ version }}/Joplin-{{ version }}.AppImage
+    - source_hash: https://github.com/laurent22/joplin/releases/download/{{ version }}/Joplin-{{ version }}.AppImage.sha512
     - user: root
     - group: root
     - mode: 755
@@ -18,6 +18,7 @@
 /home/{{ key }}/.local/share/icons/hicolor/512x512/apps/joplin.png:
   file.managed:
     - source: https://joplinapp.org/images/Icon512.png
+    - skip_verify: True
     - user: {{ user.uid }}
     - group: {{ user.gid }}
     - mode: 644
