@@ -3,12 +3,12 @@
 {% else %}
 {% set curl_header = '' %}
 {% endif %}
-{% set version = salt['pillar.get']('joplin:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/laurent22/joplin/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set version = salt['pillar.get']('joplin:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/laurent22/joplin/releases/latest" | jq -r ".tag_name" | sed -e "s/^v//"', python_shell=True)) %}
 
 /opt/joplin/Joplin.AppImage:
   file.managed:
-    - source: https://github.com/laurent22/joplin/releases/download/{{ version }}/Joplin-{{ version }}.AppImage
-    - source_hash: https://github.com/laurent22/joplin/releases/download/{{ version }}/Joplin-{{ version }}.AppImage.sha512
+    - source: https://github.com/laurent22/joplin/releases/download/v{{ version }}/Joplin-{{ version }}.AppImage
+    - source_hash: https://github.com/laurent22/joplin/releases/download/v{{ version }}/Joplin-{{ version }}.AppImage.sha512
     - user: root
     - group: root
     - mode: 755
@@ -22,6 +22,7 @@
     - user: {{ user.uid }}
     - group: {{ user.gid }}
     - mode: 644
+    - makedirs: true
 {% endfor %}
 
 /usr/share/applications/joplin.desktop:
