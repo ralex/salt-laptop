@@ -40,9 +40,9 @@ terraform:
     - user: root
     - group: root
 
-/usr/local/bin/terraform-docs-salt/terraform-docs:
+/usr/local/bin/terraform-docs:
   file.symlink:
-    - target: /usr/local/bin/terraform-docs
+    - target: /usr/local/bin/terraform-docs-salt/terraform-docs
 
 {% set version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/tfsec:
