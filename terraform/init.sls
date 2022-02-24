@@ -30,7 +30,7 @@ terraform:
     - mode: '0755'
 
 {% set version = salt['pillar.get']('terraform:terraform-docs:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
-/usr/local/bin/terraform-docs:
+/usr/local/bin/terraform-docs-salt:
   archive.extracted:
     - source: https://github.com/terraform-docs/terraform-docs/releases/download/{{ version }}/terraform-docs-{{ version }}-linux-amd64.tar.gz
     - source_hash: https://github.com/terraform-docs/terraform-docs/releases/download/{{ version }}/terraform-docs-{{ version }}.sha256sum
@@ -39,6 +39,10 @@ terraform:
     - mode: '0755'
     - user: root
     - group: root
+
+/usr/local/bin/terraform-docs-salt/terraform-docs:
+  file.symlink:
+    - target: /usr/local/bin/terraform-docs
 
 {% set version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 /usr/local/bin/tfsec:
