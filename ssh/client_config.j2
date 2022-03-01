@@ -24,6 +24,12 @@ Host {{ host }}
 {%- if args['kex_algorithms'] is defined %}
     KexAlgorithms {{ args['kex_algorithms'] }}
 {%- endif -%}
+{%- if args['host_key_algorithms'] is defined %}
+    HostkeyAlgorithms {{ args['host_key_algorithms'] }}
+{%- endif -%}
+{%- if args['pubkey_accepted_algorithms'] is defined %}
+    PubkeyAcceptedAlgorithms {{ args['pubkey_accepted_algorithms'] }}
+{%- endif -%}
 {%- if args['preferred_authentications'] is defined %}
     PreferredAuthentications {{ args['preferred_authentications'] }}
 {%- endif -%}
