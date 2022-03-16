@@ -148,13 +148,18 @@ export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 # Minikube completion
 source <(minikube completion bash)
 
-# Molecule ccompletion
+# Molecule completion
 eval "$(_MOLECULE_COMPLETE=source molecule)"
 
 for file in ~/.bashrc.d/*.bashrc;
 do
 source $file
 done
+
+# Rust development environment
+if [ -f ~/.cargo/env ]; then
+    source ~/.cargo/env
+fi
 
 # For i3 and gnome3 better integration
 export XDG_CURRENT_DESKTOP=GNOME
