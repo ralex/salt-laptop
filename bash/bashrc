@@ -157,6 +157,9 @@ source $file
 done
 
 # Rust development environment
+source <(rustup completions bash)
+eval "$(rustup completions bash cargo)"
+
 if [ -f ~/.cargo/env ]; then
     source ~/.cargo/env
 fi
