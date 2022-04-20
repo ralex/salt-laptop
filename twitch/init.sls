@@ -4,16 +4,6 @@ twitch-related-packages:
       - vlc
       - streamlink
 
-https://github.com/ralex/pulseaudio-ctl:
-  git.latest:
-    - rev: master
-    - force_fetch: True
-    - force_reset: True
-    - target: /usr/local/src/pulseaudio-ctl
-    - user: root
-    - require:
-      - pkg: i3-related-packages
-
 {% set ttchat_version = salt['pillar.get']('ttchat:version', '0.1.6') %}
 /usr/local/bin/sony-headphone-client:
   archive.extracted:
