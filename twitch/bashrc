@@ -1,4 +1,4 @@
 tw() {
-    streamlink "https://twitch.com/$1" best &
+    streamlink "https://www.twitch.tv/$1" best &
     ttchat -c $1
 }
