@@ -1,0 +1,4 @@
+tw() {
+    streamlink "$1" best &
+    ttchat -c $1
+}
