@@ -5,7 +5,7 @@ twitch-related-packages:
       - streamlink
 
 {% set ttchat_version = salt['pillar.get']('ttchat:version', '0.1.6') %}
-/usr/local/bin/ttchat:
+/usr/local/bin/ttchat-salt:
   archive.extracted:
     - source: https://github.com/atye/ttchat/releases/download/v{{ ttchat_version }}/ttchat_0.1.6_linux_amd64.tar.gz
     - source_hash: https://github.com/atye/ttchat/releases/download/v{{ ttchat_version }}/ttchat_{{ ttchat_version }}_checksums.txt
@@ -13,6 +13,10 @@ twitch-related-packages:
     - enforce_toplevel: False
     - user: root
     - group: root
+
+/usr/local/bin/ttchat:
+  file.symlink:
+    - target: /usr/local/bin/ttchat-salt/ttchat
 
 {% for key, user in pillar.get('users', {}).items() %}
 /home/{{ key }}/.bashrc.d/twitch.bashrc:
