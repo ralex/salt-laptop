@@ -5,7 +5,7 @@ twitch-related-packages:
       - streamlink
 
 {% set ttchat_version = salt['pillar.get']('ttchat:version', '0.1.6') %}
-/usr/local/bin/sony-headphone-client:
+/usr/local/bin/ttchat:
   archive.extracted:
     - source: https://github.com/atye/ttchat/releases/download/v{{ ttchat_version }}/ttchat_0.1.6_linux_amd64.tar.gz
     - source_hash: https://github.com/atye/ttchat/releases/download/v{{ ttchat_version }}/ttchat_{{ ttchat_version }}_checksums.txt
