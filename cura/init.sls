@@ -7,7 +7,7 @@
 
 /opt/cura/Ultimaker_Cura.AppImage:
   file.managed:
-    - source: https://github.com/Ultimaker/Cura/releases/download/{{ version }}/Ultimaker-Cura-{{ version }}-linux.AppImage
+    - source: https://github.com/Ultimaker/Cura/releases/download/{{ version }}/Ultimaker_Cura-{{ version }}.AppImage
     - skip_verify: True
     - user: root
     - group: root
