@@ -53,11 +53,12 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-deb [signed-by=/etc/apt/trusted.gpg.d/microsoft.asc arch=amd64] https://packages.microsoft.com/repos/azure-cli bullseye main:
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-keyring.gpg:
+  cmd.run
+
+deb [signed-by=/usr/share/keyrings/microsoft-keyring.gpg arch=amd64] https://packages.microsoft.com/repos/azure-cli bullseye main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/azure-cli.list
-    - key_url: https://packages.microsoft.com/keys/microsoft.asc
-    - aptkey: False
 
 azure-cli:
   pkg.installed

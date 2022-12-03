@@ -1,8 +1,9 @@
-deb [signed-by=/etc/apt/trusted.gpg.d/microsoft.asc arch=amd64] https://packages.microsoft.com/repos/vscode stable main:
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-keyring.gpg:
+  cmd.run
+
+deb [signed-by=/usr/share/keyrings/microsoft-keyring.gpg arch=amd64] https://packages.microsoft.com/repos/vscode stable main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/vscode.list
-    - key_url: https://packages.microsoft.com/keys/microsoft.asc
-    - aptkey: False
 
 code:
   pkg.installed
