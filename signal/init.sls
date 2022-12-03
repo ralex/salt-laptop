@@ -1,8 +1,9 @@
-deb [signed-by=/etc/apt/trusted.gpg.d/signal.asc arch=amd64] https://updates.signal.org/desktop/apt xenial main:
+curl https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > /usr/share/keyrings/signal-archive-keyring.gpg:
+  cmd.run:
+
+deb [signed-by=/usr/share/keyrings/signal-archive-keyring.gpg arch=amd64] https://updates.signal.org/desktop/apt xenial main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/signal.list
-    - key_url: https://updates.signal.org/desktop/apt/keys.asc
-    - aptkey: False
 
 signal-desktop:
   pkg.installed
