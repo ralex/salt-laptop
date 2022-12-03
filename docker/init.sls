@@ -1,4 +1,4 @@
-deb [signed-by=/etc/apt/keyrings/docker.gpg arch=amd64] https://download.docker.com/linux/debian bullseye stable:
+deb [signed-by=/etc/apt/trusted.gpg.d/docker.gpg arch=amd64] https://download.docker.com/linux/debian bullseye stable:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/docker.list
     - key_url: https://download.docker.com/linux/debian/gpg

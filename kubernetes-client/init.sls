@@ -1,6 +1,6 @@
 {% from "kubernetes-client/map.jinja" import kubernetes_client with context %}
 
-deb [signed-by=/etc/apt/keyrings/kubernetes.gpg] https://apt.kubernetes.io kubernetes-xenial main:
+deb [signed-by=/etc/apt/trusted.gpg.d/kubernetes.gpg] https://apt.kubernetes.io kubernetes-xenial main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/kubernetes.list
     - key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
@@ -10,7 +10,7 @@ kubernetes-client-packages:
   pkg.installed:
     - pkgs: {{ kubernetes_client.packages }}
 
-deb [signed-by=/etc/apt/keyrings/helm.gpg arch=amd64] https://baltocdn.com/helm/stable/debian/ all main:
+deb [signed-by=/etc/apt/trusted.gpg.d/helm.gpg arch=amd64] https://baltocdn.com/helm/stable/debian/ all main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/helm-stable-debian.list
     - key_url: https://baltocdn.com/helm/signing.asc

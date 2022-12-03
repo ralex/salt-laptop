@@ -4,7 +4,7 @@
 {% set curl_header = '' %}
 {% endif %}
 
-deb [signed-by=/etc/apt/keyrings/terraform.gpg arch=amd64] https://apt.releases.hashicorp.com bullseye main:
+deb [signed-by=/etc/apt/trusted.gpg.d/terraform.gpg arch=amd64] https://apt.releases.hashicorp.com bullseye main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/terraform.list
     - key_url: https://apt.releases.hashicorp.com/gpg
@@ -53,7 +53,7 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-deb [signed-by=/etc/apt/keyrings/microsoft.gpg arch=amd64] https://packages.microsoft.com/repos/azure-cli bullseye main:
+deb [signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg arch=amd64] https://packages.microsoft.com/repos/azure-cli bullseye main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/azure-cli.list
     - key_url: https://packages.microsoft.com/keys/microsoft.asc
