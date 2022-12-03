@@ -10,7 +10,7 @@ kubernetes-client-packages:
   pkg.installed:
     - pkgs: {{ kubernetes_client.packages }}
 
-deb [signed-by=/etc/apt/trusted.gpg.d/helm.gpg arch=amd64] https://baltocdn.com/helm/stable/debian/ all main:
+deb [signed-by=/etc/apt/trusted.gpg.d/helm.asc arch=amd64] https://baltocdn.com/helm/stable/debian/ all main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/helm-stable-debian.list
     - key_url: https://baltocdn.com/helm/signing.asc

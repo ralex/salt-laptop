@@ -1,5 +1,5 @@
 
-/etc/apt/trusted.gpg.d/keybase.gpg:
+/etc/apt/trusted.gpg.d/keybase.asc:
   file.managed:
     - contents:
       - source: https://keybase.io/docs/server_security/code_signing_key.asc

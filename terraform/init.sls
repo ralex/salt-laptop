@@ -53,7 +53,7 @@ terraform:
     - makedirs: True
     - mode: '0755'
 
-deb [signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg arch=amd64] https://packages.microsoft.com/repos/azure-cli bullseye main:
+deb [signed-by=/etc/apt/trusted.gpg.d/microsoft.asc arch=amd64] https://packages.microsoft.com/repos/azure-cli bullseye main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/azure-cli.list
     - key_url: https://packages.microsoft.com/keys/microsoft.asc
