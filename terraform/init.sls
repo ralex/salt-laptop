@@ -16,7 +16,7 @@ terraform:
 {% if salt['pillar.get']('terraform:terraformer:version')|length %}
 {% set terraformer_version = salt['pillar.get']('terraform:terraformer:version', salt['cmd.run']('curl '~ curl_header ~' -sL -t2 "https://api.github.com/repos/GoogleCloudPlatform/terraformer/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 {% endif %}
-{% if terraformer_version is not defined or terraformer_version = 'null' %}
+{% if terraformer_version is not defined or terraformer_version == 'null' %}
 {% set terraformer_version = '0.8.22' %}
 {% endif %}
 {% set provider = salt['pillar.get']('terraform:terraformer:provider', 'all') %}
