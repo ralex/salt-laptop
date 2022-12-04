@@ -4,9 +4,10 @@
 {% set curl_header = '' %}
 {% endif %}
 {% if salt['pillar.get']('cura:version') is defined %}
-{% set version = salt['pillar.get']('cura:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/Ultimaker/Cura/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
-{% else %}
-{% set version = 'v0.16.0' %}
+{% set cura_version = salt['pillar.get']('cura:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/Ultimaker/Cura/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% endif %}
+{% if cura_version is null %}
+{% set cura_version = 'v0.16.0' %}1
 {% endif %}
 
 /opt/cura/Ultimaker_Cura.AppImage:
