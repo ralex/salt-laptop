@@ -6,7 +6,7 @@
 {% if salt['pillar.get']('joplin:version') is defined %}
 {% set joplin_version = salt['pillar.get']('joplin:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/laurent22/joplin/releases/latest" | jq -r ".tag_name" | sed -e "s/^v//"', python_shell=True)) %}
 {% endif %}
-{% if joplin_version is null %}
+{% if joplin_version is not defined %}
 {% set joplin_version = '2.8.8' %}
 {% endif %}
 
