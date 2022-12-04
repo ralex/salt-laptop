@@ -1,5 +1,5 @@
 curl https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > /usr/share/keyrings/signal-archive-keyring.gpg:
-  cmd.run
+  cmd.run:
     - unless: test -f /usr/share/keyrings/signal-archive-keyring.gpg
 
 deb [signed-by=/usr/share/keyrings/signal-archive-keyring.gpg arch=amd64] https://updates.signal.org/desktop/apt xenial main:

@@ -1,5 +1,5 @@
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/vscode-keyring.gpg:
-  cmd.run
+  cmd.run:
     - unless: test -f /usr/share/keyrings/vscode-keyring.gpg
 
 deb [signed-by=/usr/share/keyrings/vscode-keyring.gpg arch=amd64] https://packages.microsoft.com/repos/vscode stable main:
