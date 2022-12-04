@@ -1,9 +1,9 @@
-{% if salt['pillar.get']('github.com:token') is defined %}
+{% if salt['pillar.get']('github.com:token')|length %}
 {% set curl_header = '-H "Authorization: token '~ salt['pillar.get']('github.com:token') ~'"' %}
 {% else %}
 {% set curl_header = '' %}
 {% endif %}
-{% if salt['pillar.get']('joplin:version') is defined %}
+{% if salt['pillar.get']('joplin:version')|length %}
 {% set joplin_version = salt['pillar.get']('joplin:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/laurent22/joplin/releases/latest" | jq -r ".tag_name" | sed -e "s/^v//"', python_shell=True)) %}
 {% endif %}
 {% if joplin_version is not defined %}
