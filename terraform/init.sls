@@ -49,7 +49,7 @@ terraform:
 /usr/local/bin/tfsec:
   file.managed:
     - source: https://github.com/tfsec/tfsec/releases/download/{{ version }}/tfsec-linux-amd64
-    - skip_verify: True
+    - source_hash: https://github.com/tfsec/tfsec/releases/download/{{ version }}/tfsec_checksums.txt
     - makedirs: True
     - mode: '0755'
 
