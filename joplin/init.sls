@@ -4,9 +4,9 @@
 {% set curl_header = '' %}
 {% endif %}
 {% if salt['pillar.get']('joplin:version')|length %}
-{% set joplin_version = salt['pillar.get']('joplin:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/laurent22/joplin/releases/latest" | jq -r ".tag_name" | sed -e "s/^v//"', python_shell=True)) %}
+{% set joplin_version = salt['pillar.get']('joplin:version', salt['cmd.run']('curl '~ curl_header ~' -sL -t2 "https://api.github.com/repos/laurent22/joplin/releases/latest" | jq -r ".tag_name" | sed -e "s/^v//"', python_shell=True)) %}
 {% endif %}
-{% if joplin_version is not defined %}
+{% if joplin_version is not defined or joplin_version =='null' %}
 {% set joplin_version = '2.8.8' %}
 {% endif %}
 

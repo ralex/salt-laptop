@@ -14,9 +14,9 @@ terraform:
   pkg.installed
 
 {% if salt['pillar.get']('terraform:terraformer:version')|length %}
-{% set terraformer_version = salt['pillar.get']('terraform:terraformer:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/GoogleCloudPlatform/terraformer/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set terraformer_version = salt['pillar.get']('terraform:terraformer:version', salt['cmd.run']('curl '~ curl_header ~' -sL -t2 "https://api.github.com/repos/GoogleCloudPlatform/terraformer/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 {% endif %}
-{% if terraformer_version is not defined %}
+{% if terraformer_version is not defined or terraformer_version = 'null' %}
 {% set terraformer_version = '0.8.22' %}
 {% endif %}
 {% set provider = salt['pillar.get']('terraform:terraformer:provider', 'all') %}
@@ -28,9 +28,9 @@ terraform:
     - mode: '0755'
 
 {% if salt['pillar.get']('terraform:terragrunt:version')|length %}
-{% set terragrunt_version = salt['pillar.get']('terraform:terragrunt:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set terragrunt_version = salt['pillar.get']('terraform:terragrunt:version', salt['cmd.run']('curl '~ curl_header ~' -sL -t2 "https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 {% endif %}
-{% if terragrunt_version is not defined %}
+{% if terragrunt_version is not defined or terragrunt_version == 'null' %}
 {% set terragrunt_version = 'v0.42.3' %}
 {% endif %}
 /usr/local/bin/terragrunt:
@@ -41,9 +41,9 @@ terraform:
     - mode: '0755'
 
 {% if salt['pillar.get']('terraform:terraform-docs:version')|length %}
-{% set terraform_docs_version = salt['pillar.get']('terraform:terraform-docs:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set terraform_docs_version = salt['pillar.get']('terraform:terraform-docs:version', salt['cmd.run']('curl '~ curl_header ~' -sL -t2 "https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 {% endif %}
-{% if terraform_docs_version is not defined %}
+{% if terraform_docs_version is not defined or terraform_docs_version == 'null' %}
 {% set terraform_docs_version = 'v0.16.0' %}
 {% endif %}
 /usr/local/bin/terraform-docs-salt:
@@ -62,9 +62,9 @@ terraform:
 
 
 {% if salt['pillar.get']('terraform:tfsec:version')|length %}
-{% set tfsec_version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% set tfsec_version = salt['pillar.get']('terraform:tfsec:version', salt['cmd.run']('curl '~ curl_header ~' -sL -t2 "https://api.github.com/repos/tfsec/tfsec/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
 {% endif %}
-{% if tfsec_version is not defined %}
+{% if tfsec_version is not defined or tfsec_version == 'null' %}
 {% set tfsec_version = 'v1.28.1' %}
 {% endif %}
 /usr/local/bin/tfsec:
