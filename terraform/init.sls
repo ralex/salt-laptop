@@ -55,6 +55,7 @@ terraform:
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-keyring.gpg:
   cmd.run
+    - unless: test -f /usr/share/keyrings/microsoft-keyring.gpg
 
 deb [signed-by=/usr/share/keyrings/microsoft-keyring.gpg arch=amd64] https://packages.microsoft.com/repos/azure-cli bullseye main:
   pkgrepo.managed:

@@ -12,6 +12,7 @@ kubernetes-client-packages:
 
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor > /usr/share/keyrings/helm-keyring.gpg:
   cmd.run
+    - unless: test -f /usr/share/keyrings/helm-keyring.gpg
 
 deb [signed-by=/usr/share/keyrings/helm-keyring.gpg arch=amd64] https://baltocdn.com/helm/stable/debian/ all main:
   pkgrepo.managed:
