@@ -12,8 +12,8 @@
 
 /opt/joplin/Joplin.AppImage:
   file.managed:
-    - source: https://github.com/laurent22/joplin/releases/download/v{{ version }}/Joplin-{{ version }}.AppImage
-    - source_hash: https://github.com/laurent22/joplin/releases/download/v{{ version }}/Joplin-{{ version }}.AppImage.sha512
+    - source: https://github.com/laurent22/joplin/releases/download/v{{ joplin_version }}/Joplin-{{ joplin_version }}.AppImage
+    - source_hash: https://github.com/laurent22/joplin/releases/download/v{{ joplin_version }}/Joplin-{{ joplin_version }}.AppImage.sha512
     - user: root
     - group: root
     - mode: 755
