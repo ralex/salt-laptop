@@ -3,7 +3,11 @@
 {% else %}
 {% set curl_header = '' %}
 {% endif %}
+{% if salt['pillar.get']('cura:version') is defined %}
 {% set version = salt['pillar.get']('cura:version', salt['cmd.run']('curl '~ curl_header ~' -sL "https://api.github.com/repos/Ultimaker/Cura/releases/latest" | jq -r ".tag_name"', python_shell=True)) %}
+{% else %}
+{% set version = 'v0.16.0' %}
+{% endif %}
 
 /opt/cura/Ultimaker_Cura.AppImage:
   file.managed:
