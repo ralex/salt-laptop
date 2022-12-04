@@ -44,7 +44,7 @@ vagrant-libvirt-packages:
 libvirt:
   group.present:
     - system: True
-    - members: {{ pillar.get('users', {}) }}
+    - members: {{ pillar.get('users', {}) }}
 
 {% for user in pillar.get('users', {}) %}
 vagrant plugin install vagrant-libvirt for {{ user }}:
