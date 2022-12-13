@@ -149,7 +149,7 @@ export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 source <(minikube completion bash)
 
 # Molecule completion
-eval "$(_MOLECULE_COMPLETE=source molecule)"
+# eval "$(_MOLECULE_COMPLETE=source molecule)"
 
 for file in ~/.bashrc.d/*.bashrc;
 do
