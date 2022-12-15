@@ -34,6 +34,8 @@ rnnoise-systemd-restart-pipewire:
   cmd.run:
    - name: systemctl restart --user pipewire.service
    - runas: {{ key }}
+   - env:
+     - DBUS_SESSION_BUS_ADDRESS: {{ 'unix:path=/run/user/' ~ user.uid ~ '/bus' }}
    - onchanges:  
      - file: /home/{{ key }}/.config/pipewire/pipewire.conf.d/99-input-denoising.conf
 {% endfor %}
