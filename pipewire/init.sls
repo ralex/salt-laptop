@@ -25,6 +25,7 @@ pipewire:
 /home/{{ key }}/.config/pipewire/pipewire.conf.d/99-input-denoising.conf:
   file.managed:
     - source: salt://pipewire/99-input-denoising.conf
+    - makedirs: True
     - user: {{ user.uid }}
     - group: {{ user.gid }}
     - mode: 644
