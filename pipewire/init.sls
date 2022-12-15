@@ -10,8 +10,9 @@
 {% set rnnoise_version = 'v1.03' %}
 {% endif %}
 
-/usr/local/lib/rnnoise:
+lib-linux-rnnoise:
   archive.extracted:
+    - name: /usr/local/lib
     - source: https://github.com/werman/noise-suppression-for-voice/releases/download/{{ rnnoise_version }}/linux-rnnoise.zip
     - skip_verify: True
     - enforce_toplevel: False
@@ -36,6 +37,7 @@ rnnoise-systemd-restart-pipewire:
    - runas: {{ key }}
    - env:
      - DBUS_SESSION_BUS_ADDRESS: {{ 'unix:path=/run/user/' ~ user.uid ~ '/bus' }}
-   - onchanges:  
+   - onchanges:
+     - archive: lib-linux-rnnoise
      - file: /home/{{ key }}/.config/pipewire/pipewire.conf.d/99-input-denoising.conf
 {% endfor %}
