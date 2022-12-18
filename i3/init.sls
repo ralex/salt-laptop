@@ -57,7 +57,7 @@ i3-pip-packages:
 
 https://github.com/ralex/sway-tools:
   git.latest:
-    - rev: master
+    - rev: main
     - force_fetch: True
     - force_reset: True
     - target: /usr/local/src/sway-tools
