@@ -72,13 +72,13 @@ pw-volume-build:
     - user: {{ key }}
     - name: cargo build -r --target-dir /tmp/
     - require:
-      - git: https://github.com/smasher164/sway-tools
+      - git: https://github.com/ralex/sway-tools
     - onchanges:
-      - git: https://github.com/smasher164/sway-tools
+      - git: https://github.com/ralex/sway-tools
 
 /home/{{ key }}/.local/bin/pw-volume:
   file.managed:
-    - source: /mymodule.conf
+    - source: /tmp/release/pw-volume
     - onchanges:
       - cmd: pw-volume-build
 {% endfor %}
