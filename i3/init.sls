@@ -79,6 +79,9 @@ pw-volume-build:
 /home/{{ key }}/.local/bin/pw-volume:
   file.managed:
     - source: /tmp/release/pw-volume
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
+    - mode: 755
     - onchanges:
       - cmd: pw-volume-build
 {% endfor %}
