@@ -2,7 +2,7 @@
 https://github.com/ralex/asdf.git:
   git.latest:
     - target: /home/{{ key }}/.asdf
-    - user: {{ user.uid }}
+    - user: {{ key }}
 
 /home/{{ key }}/.bashrc.d/asdf.bashrc:
   file.managed:
