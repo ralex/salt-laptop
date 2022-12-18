@@ -55,25 +55,33 @@ i3-pip-packages:
     - require:
       - pip: pypandoc
 
-https://github.com/ralex/pulseaudio-ctl:
+https://github.com/ralex/sway-tools:
   git.latest:
     - rev: master
     - force_fetch: True
     - force_reset: True
-    - target: /usr/local/src/pulseaudio-ctl
+    - target: /usr/local/src/sway-tools
     - user: root
     - require:
       - pkg: i3-related-packages
 
-pulseaudio-ctl:
+{% for key, user in pillar.get('users', {}).items() %}
+pw-volume-build:
   cmd.run:
-    - cwd: /usr/local/src/pulseaudio-ctl
-    - user: root
-    - name: make install
+    - cwd: /usr/local/src/sway-tools/pw-volume
+    - user: {{ key }}
+    - name: cargo build -r --target-dir /tmp/
     - require:
-      - git: https://github.com/ralex/pulseaudio-ctl
+      - git: https://github.com/smasher164/sway-tools
     - onchanges:
-      - git: https://github.com/ralex/pulseaudio-ctl
+      - git: https://github.com/smasher164/sway-tools
+
+/home/{{ key }}/.local/bin/pw-volume:
+  file.managed:
+    - source: /mymodule.conf
+    - onchanges:
+      - cmd.run: pw-volume-build
+{% endfor %}
 
 {% set nuke_version = salt['pillar.get']('nuke:version', '5.1.2') %}
 /usr/src/nuke:
