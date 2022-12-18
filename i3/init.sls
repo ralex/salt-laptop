@@ -69,7 +69,7 @@ https://github.com/ralex/sway-tools:
 pw-volume-build:
   cmd.run:
     - cwd: /usr/local/src/sway-tools/pw-volume
-    - user: {{ key }}
+    - runas: {{ key }}
     - name: cargo build -r --target-dir /tmp/
     - require:
       - git: https://github.com/ralex/sway-tools
