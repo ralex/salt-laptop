@@ -80,7 +80,7 @@ pw-volume-build:
   file.managed:
     - source: /mymodule.conf
     - onchanges:
-      - cmd.run: pw-volume-build
+      - cmd: pw-volume-build
 {% endfor %}
 
 {% set nuke_version = salt['pillar.get']('nuke:version', '5.1.2') %}
