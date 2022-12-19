@@ -233,10 +233,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle
-bindsym XF86AudioMicMute exec --no-startup-id amixer sset Capture toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pw-volume change '+5%'
+bindsym XF86AudioLowerVolume exec --no-startup-id pw-volume change '-5%'
+bindsym XF86AudioMute exec --no-startup-id pw-volume mute toggle
+#bindsym XF86AudioMicMute exec --no-startup-id amixer sset Capture toggle
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
