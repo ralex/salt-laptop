@@ -8,6 +8,7 @@ general {
 }
 
 order += "ethernet tailscale0"
+order += "ethernet tun0"
 order += "ethernet Citrix_VA"
 {%- for interface in grains['ip4_interfaces'].keys() %}
 {%- if interface.startswith('en') %}
@@ -34,6 +35,11 @@ wireless {{ interface }} {
 
 ethernet Citrix_VA {
     format_up = ""
+    format_down = ""
+}
+
+ethernet tun0 {
+    format_up = ""
     format_down = ""
 }
 
