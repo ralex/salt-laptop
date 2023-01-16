@@ -19,6 +19,7 @@ set $ws10 "10 "
                                          runas=i3_user,
                                          env='{"DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/' ~ i3_user ~ '/bus"}',
                                          python_shell=True) %}
+# Debug theme {{ i3_color_scheme }}
 {% if i3_color_scheme == 'prefer-dark' %}
 # Dark theme
 set $bg-color            #353535
