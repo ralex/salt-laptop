@@ -170,6 +170,8 @@ pw-volume-build:
     - user: {{ user.uid }}
     - group: {{ user.gid }}
     - mode: 644
+    - context:
+        i3_user: {{ key }}
 
 /home/{{ key }}/.config/i3/i3status.conf:
   file.managed:

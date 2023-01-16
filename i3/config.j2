@@ -15,20 +15,25 @@ set $ws8 "8 "
 set $ws9 "9 "
 set $ws10 "10 "
 
+{% set i3_color_scheme = salt['cmd.run']('gsettings get org.gnome.desktop.interface color-scheme',
+                                         runas=i3_user,
+                                         env='{"DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/' ~ i3_user ~ '/bus"}',
+                                         python_shell=True) %}
+{% if i3_color_scheme == 'prefer-dark' %}
 # Dark theme
-#set $bg-color            #1b1d22
-#set $inactive-bg-color   #1b1d22
-#set $text-color          #f3f4f5
-#set $inactive-text-color #676E7D
-#set $urgent-bg-color     #E53935
-
-# Arc Darker matching Theme
+set $bg-color            #353535
+set $inactive-bg-color   #242424
+set $text-color          #ffffff
+set $inactive-text-color #656565
+set $urgent-bg-color     #4fa360
+{% else %}
+# Light Theme
 set $bg-color            #e7e8eb
-set $bg-color2           #1b1d22
 set $inactive-bg-color   #1b1d22
 set $text-color          #1b1d22
 set $inactive-text-color #e7e8eb
-set $urgent-bg-color     #008cff
+set $urgent-bg-color     #4fa360
+{% endif %}
 
 # Define monitor
 set $hdmi                "primary"
