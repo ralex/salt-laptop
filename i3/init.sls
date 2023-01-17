@@ -13,6 +13,7 @@ i3-related-packages:
       - fonts-font-awesome
       - git
       - gnome-control-center
+      - gnome-screenshot
       - i3-wm
       - i3status
       - imagemagick
