@@ -1,3 +1,6 @@
+shellcheck:
+  pkg.installed
+
 {% for key, user in pillar.get('users', {}).items() %}
 /home/{{ key }}/.bashrc:
   file.managed:
