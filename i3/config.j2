@@ -257,8 +257,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Images/'
 bindsym XF86Calculator exec --no-startup-id gnome-calculator
 
-# execute xrandr_auto on demand
-bindsym $mod+Shift+m exec ~/.scripts/xrandr_auto
+# execute autorandr on demand
+bindsym $mod+Shift+m exec autorandr
 
 # window colors
 #                       border              background         text                 indicator
@@ -297,7 +297,7 @@ bar {
 exec --no-startup-id xset s 300 5
 exec --no-startup-id xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- $lock
 
-exec_always --no-startup-id ~/.scripts/xrandr_auto
+exec_always --no-startup-id autorandr
 exec_always --no-startup-id /usr/libexec/gsd-xsettings
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

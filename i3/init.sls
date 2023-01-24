@@ -3,6 +3,7 @@ i3-related-packages:
     - pkgs:
       - arandr
       - arc-theme
+      - autorandr
       - bc
       - compton
       - dnsutils
