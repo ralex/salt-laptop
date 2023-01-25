@@ -14,6 +14,6 @@ code:
     - contents: |
           fs.inotify.max_user_watches=524288
 
-      - user: root
-      - group: root
-      - mode: 644
+    - user: root
+    - group: root
+    - mode: 644
