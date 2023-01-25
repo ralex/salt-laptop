@@ -8,3 +8,12 @@ deb [signed-by=/usr/share/keyrings/vscode-keyring.gpg arch=amd64] https://packag
 
 code:
   pkg.installed
+
+/etc/sysctl.d/inotify.conf:
+  file.managed:
+    - contents: |
+          fs.inotify.max_user_watches=524288
+
+      - user: root
+      - group: root
+      - mode: 644
