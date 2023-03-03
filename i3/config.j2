@@ -250,7 +250,7 @@ bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Images/'
 bindsym XF86Calculator exec --no-startup-id gnome-calculator
 
 # execute autorandr on demand
-bindsym $mod+Shift+m exec autorandr
+bindsym $mod+Shift+m exec autorandr --change
 
 # window colors
 #                       border              background         text                 indicator
@@ -299,7 +299,7 @@ bar {
 exec --no-startup-id xset s 300 5
 exec --no-startup-id xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- $lock
 
-exec_always --no-startup-id autorandr
+exec_always --no-startup-id autorandr --change
 exec_always --no-startup-id /usr/libexec/gsd-xsettings
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
