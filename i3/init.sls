@@ -43,6 +43,9 @@ i3-related-packages:
     - regex: ^OnlyShowIn
 
 {% for user in pillar.get('users', {}) %}
+/home/{{ user }}/.config/i3/venv:
+  virtualenv.managed
+
 i3-pip-packages:
   pip.installed:
     - pkgs:
