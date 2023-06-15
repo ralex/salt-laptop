@@ -44,7 +44,8 @@ i3-related-packages:
 
 {% for user in pillar.get('users', {}) %}
 /home/{{ user }}/.config/i3/venv:
-  virtualenv.managed
+  virtualenv.managed:
+    - user: {{ user }}
 
 i3-pip-packages:
   pip.installed:
@@ -53,6 +54,7 @@ i3-pip-packages:
       - pypandoc
       - taskw
     - bin_env: '/home/{{ user }}/.config/i3/venv'
+    - user: {{ user }}
 {% endfor %}
 
 https://github.com/ralex/sway-tools:
