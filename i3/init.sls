@@ -42,7 +42,7 @@ i3-related-packages:
   file.comment:
     - regex: ^OnlyShowIn
 
-{% for user in pillar.get('users', {}).items() %}
+{% for user in pillar.get('users', {}) %}
 i3-pip-packages:
   pip.installed:
     - pkgs:
