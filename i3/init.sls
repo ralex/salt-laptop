@@ -62,7 +62,7 @@ https://github.com/ralex/sway-tools:
     - require:
       - pkg: i3-related-packages
 
-{% for user in pillar.get('users', {}).items() %}
+{% for key, user in pillar.get('users', {}).items() %}
 pw-volume-build:
   cmd.run:
     - cwd: /usr/local/src/sway-tools/pw-volume
