@@ -42,20 +42,15 @@ i3-related-packages:
   file.comment:
     - regex: ^OnlyShowIn
 
-pypandoc:
-  pip.installed:
-    - bin_env: '/usr/bin/pip3'
-    - require:
-      - pkg: i3-related-packages
-
+{% for key, user in pillar.get('users', {}).items() %}
 i3-pip-packages:
   pip.installed:
     - pkgs:
       - fontawesome
+      - pypandoc
       - taskw
-    - bin_env: '/usr/bin/pip3'
-    - require:
-      - pip: pypandoc
+    - bin_env: '/home/{{ user}}/.config/i3/venv'
+{% endfor %}
 
 https://github.com/ralex/sway-tools:
   git.latest:
