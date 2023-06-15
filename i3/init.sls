@@ -42,14 +42,14 @@ i3-related-packages:
   file.comment:
     - regex: ^OnlyShowIn
 
-{% for key, user in pillar.get('users', {}).items() %}
+{% for user in pillar.get('users', {}).items() %}
 i3-pip-packages:
   pip.installed:
     - pkgs:
       - fontawesome
       - pypandoc
       - taskw
-    - bin_env: '/home/{{ user}}/.config/i3/venv'
+    - bin_env: '/home/{{ user }}/.config/i3/venv'
 {% endfor %}
 
 https://github.com/ralex/sway-tools:
@@ -62,7 +62,7 @@ https://github.com/ralex/sway-tools:
     - require:
       - pkg: i3-related-packages
 
-{% for key, user in pillar.get('users', {}).items() %}
+{% for user in pillar.get('users', {}).items() %}
 pw-volume-build:
   cmd.run:
     - cwd: /usr/local/src/sway-tools/pw-volume
@@ -211,6 +211,6 @@ i3-msg restart for {{ user }}:
     - check_cmd:
       - /bin/true
     - onchanges:
-      - file: /home/{{ user}}/.config/i3/i3status.conf
-      - file: /home/{{ user}}/.config/compton.conf
+      - file: /home/{{ user }}/.config/i3/i3status.conf
+      - file: /home/{{ user }}/.config/compton.conf
 {% endfor %}
