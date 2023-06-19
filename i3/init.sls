@@ -19,6 +19,8 @@ i3-related-packages:
       - i3status
       - imagemagick
       - jq
+      - libdbus-1-dev
+      - libglib2.0-dev
       - libnotify-bin
       - locate
       - mplayer
@@ -35,8 +37,8 @@ i3-related-packages:
       - rofi
       - scrot
       - wmctrl
-      - xss-lock
       - xsecurelock
+      - xss-lock
 
 /usr/share/applications/gnome-control-center.desktop:
   file.comment:
@@ -50,6 +52,7 @@ i3-related-packages:
 i3-pip-packages:
   pip.installed:
     - pkgs:
+      - dbus-python
       - fontawesome
       - pypandoc
       - taskw
