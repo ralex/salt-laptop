@@ -35,7 +35,7 @@ regolith.uninstall:
 {% for file in files %}
 /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}:
   file.managed:
-    - source: salt://regolith/i3/{{ file }}
+    - source: salt://regolith-desktop/i3/{{ file }}
     - user: {{ user.uid }}
     - group: {{ user.gid }}
     - makedirs: True
