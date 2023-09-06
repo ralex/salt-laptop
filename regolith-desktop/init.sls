@@ -45,6 +45,8 @@ regolith.uninstall:
 regolith-look refresh for {{ key }}:
   cmd.run:
     - name: regolith-look refresh
+    - env:
+      - XDG_SESSION_TYPE: x11
     - user: {{ key }}
     - onchanges:
       {% for file in files %}
