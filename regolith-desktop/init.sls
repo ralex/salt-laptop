@@ -42,7 +42,7 @@ regolith.uninstall:
     - mode: 644
 {% endfor %}
 
-regolith-look refresh for {{ user }}:
+regolith-look refresh for {{ key }}:
   cmd.run:
     - name: regolith-look refresh
     - user: {{ key }}
