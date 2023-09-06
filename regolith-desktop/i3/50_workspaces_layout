@@ -1,0 +1,20 @@
+## Default layout <default|stacking|tabbed>
+workspace_layout tabbed
+
+## Title padding trick
+for_window [class=".*"] title_format " %title"
+
+## thin borders
+# hide_edge_borders both
+
+## Default workspaces assignment to monitors
+workspace "$ws1" output primary
+workspace "$ws2" output primary
+workspace "$ws3" output primary
+workspace "$ws4" output primary
+workspace "$ws5" output primary
+workspace "$ws6" output primary
+workspace "$ws7" output primary
+workspace "$ws8" output nonprimary
+workspace "$ws9" output nonprimary
+workspace "$ws10" output nonprimary
