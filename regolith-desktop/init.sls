@@ -76,6 +76,7 @@ regolith-look refresh for {{ key }}:
       - XDG_SESSION_TYPE: x11
     - user: {{ key }}
     - onchanges:
+      - pkg: regolith.packages
       - file: /home/{{ key }}/.config/regolith2/Xresources
       {% for file in files %}
       - file: /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}
