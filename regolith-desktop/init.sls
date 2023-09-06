@@ -41,4 +41,13 @@ regolith.uninstall:
     - makedirs: True
     - mode: 644
 {% endfor %}
+
+regolith-look refresh for {{ user }}:
+  cmd.run:
+    - name: regolith-look refresh
+    - user: {{ user }}
+    - onchanges:
+      {% for file in files %}
+      - file: /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}
+      {% endfor %}
 {% endfor %}
