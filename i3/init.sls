@@ -215,6 +215,8 @@ pw-volume-build:
 i3-msg restart for {{ user }}:
   cmd.run:
     - name: i3-msg restart
+    - env:
+      - XDG_SESSION_TYPE: x11
     - user: {{ user }}
     - check_cmd:
       - /bin/true
