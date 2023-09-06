@@ -9,3 +9,36 @@ regolith.packages:
     - pkgs:
       - regolith-desktop
       - regolith-compositor-picom-glx
+      - i3xrocks-rofication
+
+regolith.uninstall:
+  pkg.removed:
+    - pkgs:
+      - regolith-i3-default-style
+      - regolith-i3-next-workspace
+      - regolith-i3-swap-focus
+      - regolith-i3-workspace-config
+
+{% for key, user in pillar.get('users', {}).items() %}
+/var/lib/AccountsService/users/{{ key }}:
+  file.managed:
+    - contents: |
+        [User]
+        Language=
+        XSession=Regolith
+        SystemAccount=false
+    - user: root
+    - group: root
+    - mode: 644
+
+{% set files = ["40_default-style", "40_i3-swap-focus", "40_next-workspace", "40_workspace-config", "50_windows_assignment", "50_workspaces_layout"] %}
+{% for file in files %}
+/home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}:
+  file.managed:
+    - source: salt://regolith/i3/{{ file }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
+    - makedirs: True
+    - mode: 644
+{% endfor %}
+{% endfor %}
