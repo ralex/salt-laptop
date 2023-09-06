@@ -9,7 +9,16 @@ regolith.packages:
     - pkgs:
       - regolith-desktop
       - regolith-compositor-picom-glx
+      - i3xrocks-battery
+      - i3xrocks-bluetooth
+      - i3xrocks-key-indicator
+      - i3xrocks-media-player
+      - i3xrocks-microphone
+      - i3xrocks-net-traffic
       - i3xrocks-rofication
+      - i3xrocks-tailscale
+      - i3xrocks-volume
+      - i3xrocks-wifi
 
 regolith.uninstall:
   pkg.removed:
