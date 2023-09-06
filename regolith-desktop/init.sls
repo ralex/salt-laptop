@@ -42,6 +42,14 @@ regolith.uninstall:
     - mode: 644
 {% endfor %}
 
+/home/{{ key }}/.config/regolith2/Xresources:
+  file.managed:
+    - source: salt://regolith-desktop/Xresources
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
+    - makedirs: True
+    - mode: 644
+
 regolith-look refresh for {{ key }}:
   cmd.run:
     - name: regolith-look refresh
@@ -49,6 +57,7 @@ regolith-look refresh for {{ key }}:
       - XDG_SESSION_TYPE: x11
     - user: {{ key }}
     - onchanges:
+      - file: /home/{{ key }}/.config/regolith2/Xresources
       {% for file in files %}
       - file: /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}
       {% endfor %}
