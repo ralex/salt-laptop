@@ -45,7 +45,7 @@ regolith.uninstall:
 regolith-look refresh for {{ user }}:
   cmd.run:
     - name: regolith-look refresh
-    - user: {{ user }}
+    - user: {{ key }}
     - onchanges:
       {% for file in files %}
       - file: /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}
