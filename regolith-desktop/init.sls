@@ -15,7 +15,9 @@ regolith.uninstall:
   pkg.removed:
     - pkgs:
       - regolith-i3-default-style
+      - regolith-i3-navigation
       - regolith-i3-next-workspace
+      - regolith-i3-session
       - regolith-i3-swap-focus
       - regolith-i3-workspace-config
 
@@ -31,7 +33,15 @@ regolith.uninstall:
     - group: root
     - mode: 644
 
-{% set files = ["40_default-style", "40_i3-swap-focus", "40_next-workspace", "40_workspace-config", "50_windows_assignment", "50_workspaces_layout"] %}
+{% set files = ["30_navigation",
+                "40_default-style",
+                "40_i3-swap-focus",
+                "40_next-workspace",
+                "40_workspace-config",
+                "50_windows_assignment",
+                "50_workspaces_layout",
+                "55_session_keybindings"]
+%}
 {% for file in files %}
 /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}:
   file.managed:
