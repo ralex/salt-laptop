@@ -76,7 +76,6 @@ regolith-look refresh for {{ key }}:
     - user: {{ key }}
     - onchanges:
       - pkg: regolith.packages
-      - pkg: regolith.uninstall
       - file: /home/{{ key }}/.config/regolith3/Xresources
       {% for file in files %}
       - file: /home/{{ key }}/.config/regolith3/i3/config.d/{{ file }}
