@@ -37,8 +37,9 @@ regolith.uninstall:
   file.managed:
     - contents: |
         [User]
-        Language=
-        XSession=Regolith
+        Language=;
+        Session=regolith
+        Icon=/home/{{ key }}/.face
         SystemAccount=false
     - user: root
     - group: root
