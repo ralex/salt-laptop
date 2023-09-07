@@ -21,18 +21,6 @@ regolith.packages:
       - i3xrocks-volume
       - i3xrocks-wifi
 
-regolith.uninstall:
-  pkg.removed:
-    - pkgs:
-      - regolith-i3-control-center-gnome
-      - regolith-i3-default-style
-      - regolith-i3-ilia
-      - regolith-i3-navigation
-      - regolith-i3-next-workspace
-      - regolith-i3-session
-      - regolith-i3-swap-focus
-      - regolith-i3-workspace-config
-
 {% for key, user in pillar.get('users', {}).items() %}
 /var/lib/AccountsService/users/{{ key }}:
   file.managed:
