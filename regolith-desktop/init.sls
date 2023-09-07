@@ -58,7 +58,7 @@ regolith.uninstall:
                 "60_gnome_config_keybindings"]
 %}
 {% for file in files %}
-/home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}:
+/home/{{ key }}/.config/regolith3/i3/config.d/{{ file }}:
   file.managed:
     - source: salt://regolith-desktop/i3/{{ file }}
     - user: {{ user.uid }}
@@ -67,7 +67,7 @@ regolith.uninstall:
     - mode: 644
 {% endfor %}
 
-/home/{{ key }}/.config/regolith2/Xresources:
+/home/{{ key }}/.config/regolith3/Xresources:
   file.managed:
     - source: salt://regolith-desktop/Xresources
     - user: {{ user.uid }}
@@ -84,8 +84,8 @@ regolith-look refresh for {{ key }}:
     - onchanges:
       - pkg: regolith.packages
       - pkg: regolith.uninstall
-      - file: /home/{{ key }}/.config/regolith2/Xresources
+      - file: /home/{{ key }}/.config/regolith3/Xresources
       {% for file in files %}
-      - file: /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}
+      - file: /home/{{ key }}/.config/regolith3/i3/config.d/{{ file }}
       {% endfor %}
 {% endfor %}
