@@ -9,6 +9,7 @@ regolith.packages:
     - pkgs:
       - regolith-desktop
       - regolith-compositor-picom-glx
+      - regolith-look-ayu-dark
       - i3xrocks-battery
       - i3xrocks-bluetooth
       - i3xrocks-key-indicator
