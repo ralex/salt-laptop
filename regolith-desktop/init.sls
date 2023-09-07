@@ -45,16 +45,22 @@ regolith.uninstall:
     - group: root
     - mode: 644
 
-{% set files = ["20_ilia",
-                "30_navigation",
-                "40_default-style",
-                "40_i3-swap-focus",
-                "40_next-workspace",
-                "40_workspace-config",
-                "50_windows_assignment",
-                "50_workspaces_layout",
-                "55_session_keybindings",
-                "60_gnome_config_keybindings"]
+# Additional files not used for now, conflicting with
+# regolith-i3-* packages installed with regolith-desktop
+#
+# "20_ilia"
+# "30_navigation"
+# "40_default-style"
+# "40_i3-swap-focus"
+# "40_next-workspace"
+# "40_workspace-config"
+# "55_session_keybindings"
+# "60_gnome_config_keybindings"
+
+{% set files = [
+  "50_windows_assignment",
+  "50_workspaces_layout"
+]
 %}
 {% for file in files %}
 /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}:
