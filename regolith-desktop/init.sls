@@ -1,4 +1,4 @@
-deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-3_0-debian-bullseye-amd64 bullseye main:
+deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-debian-bullseye-amd64 bullseye main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/regolith.list
     - key_url: https://regolith-desktop.org/regolith.key
@@ -57,7 +57,7 @@ regolith.uninstall:
                 "60_gnome_config_keybindings"]
 %}
 {% for file in files %}
-/home/{{ key }}/.config/regolith3/i3/config.d/{{ file }}:
+/home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}:
   file.managed:
     - source: salt://regolith-desktop/i3/{{ file }}
     - user: {{ user.uid }}
@@ -66,7 +66,7 @@ regolith.uninstall:
     - mode: 644
 {% endfor %}
 
-/home/{{ key }}/.config/regolith3/Xresources:
+/home/{{ key }}/.config/regolith2/Xresources:
   file.managed:
     - source: salt://regolith-desktop/Xresources
     - user: {{ user.uid }}
@@ -83,8 +83,8 @@ regolith-look refresh for {{ key }}:
     - onchanges:
       - pkg: regolith.packages
       - pkg: regolith.uninstall
-      - file: /home/{{ key }}/.config/regolith3/Xresources
+      - file: /home/{{ key }}/.config/regolith2/Xresources
       {% for file in files %}
-      - file: /home/{{ key }}/.config/regolith3/i3/config.d/{{ file }}
+      - file: /home/{{ key }}/.config/regolith2/i3/config.d/{{ file }}
       {% endfor %}
 {% endfor %}
