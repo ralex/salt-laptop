@@ -38,7 +38,6 @@ regolith.uninstall:
   file.managed:
     - contents: |
         [User]
-        Language=fr_FR.UTF-8;
         Session=regolith
         Icon=/home/{{ key }}/.face
         SystemAccount=false
