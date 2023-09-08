@@ -6,7 +6,6 @@ assign [class="thunderbird-default"] $ws3
 assign [class="Evolution"] $ws3
 assign [class="Code"] $ws4
 assign [class="Nautilus"] $ws5
-assign [class="UltiMaker-Cura"] $ws5
 assign [class="Remmina"] $ws6
 assign [class="Minecraft Launcher"] $ws6
 assign [class="libreoffice"] $ws7

@@ -22,3 +22,13 @@
 /usr/share/applications/cura.desktop:
   file.managed:
     - source: salt://cura/cura.desktop
+
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.config/regolith3/i3/config.d/50_cura:
+  file.managed:
+    - contents: |
+        assign [class="UltiMaker-Cura"] $ws5
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
+    - mode: 644
+{% endfor %}
