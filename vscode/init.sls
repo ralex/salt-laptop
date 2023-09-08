@@ -17,3 +17,13 @@ code:
     - user: root
     - group: root
     - mode: 644
+
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.config/regolith3/i3/config.d/50_vscode:
+  file.managed:
+    - contents: |
+        assign [class="Code"] $ws4
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
+    - mode: 644
+{% endfor %}
