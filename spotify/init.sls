@@ -6,3 +6,12 @@ deb [signed-by=/etc/apt/trusted.gpg.d/spotify.gpg] http://repository.spotify.com
 
 spotify-client:
   pkg.installed
+
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.config/regolith3/i3/config.d/50_spotify:
+  file.managed:
+    - contents: |
+        assign [class="Spotify"] $ws8
+    - user: root
+    - group: root
+    - mode: 644

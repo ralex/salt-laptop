@@ -16,7 +16,6 @@ assign [class="libreoffice-writer"] $ws7
 assign [class="libreoffice-calc"] $ws7
 assign [class="Evince"] $ws7
 assign [class="Joplin"] $ws7
-assign [class="Spotify"] $ws8
 assign [class="Slack"] $ws10
 assign [class="teams-for-linux"] $ws9
 assign [class="Microsoft Teams - Preview"] $ws9
