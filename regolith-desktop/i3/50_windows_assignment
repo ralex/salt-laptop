@@ -1,4 +1,3 @@
-assign [class="Terminator"] $ws1
 assign [class="X-terminal-emulator"] $ws1
 assign [class="Chromium"] $ws2
 assign [class="Firefox"] $ws2
@@ -19,5 +18,3 @@ assign [class="Joplin"] $ws7
 assign [class="Slack"] $ws10
 assign [class="teams-for-linux"] $ws9
 assign [class="Microsoft Teams - Preview"] $ws9
-assign [class="Signal"] $ws10
-assign [class="Signal Beta"] $ws10

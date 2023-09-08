@@ -8,3 +8,13 @@ deb [signed-by=/usr/share/keyrings/signal-archive-keyring.gpg arch=amd64] https:
 
 signal-desktop:
   pkg.installed
+
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.config/regolith3/i3/config.d/50_signal:
+  file.managed:
+    - contents: |
+        assign [class="Signal"] $ws10
+    - user: root
+    - group: root
+    - mode: 644
+{% endfor %}
