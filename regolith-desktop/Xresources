@@ -1,5 +1,10 @@
 regolith.look.path: /usr/share/regolith-look/ayu-dark
+
+wm.program.settings: regolith-control-center
+wm.program.display: regolith-control-center display
+wm.program.wifi: regolith-control-center wifi
+wm.program.bluetooth: regolith-control-center bluetooth
+
 wm.binding.launcher.app: d
-wm.binding.program: gnome-control-center display
 wm.binding.display: s
 wm.binding.exit_app: Shift+a
