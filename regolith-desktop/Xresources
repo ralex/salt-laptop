@@ -11,4 +11,3 @@ wm.binding.launcher.app: d
 wm.binding.display: s
 wm.binding.exit_app: Shift+a
 wm.binding.lock: l
-wm.binding.look_selector: o
