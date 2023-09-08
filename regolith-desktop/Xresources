@@ -1,5 +1,6 @@
 regolith.look.path: /usr/share/regolith-look/ayu-dark
-regolith.wallpaper.file: ~/.config/.wallpaper.jpg
+regolith.wallpaper.file: 
+regolith.wallpaper.color.primary: 
 
 wm.program.settings: regolith-control-center
 wm.program.display: regolith-control-center display
