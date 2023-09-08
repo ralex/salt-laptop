@@ -1,1 +1,3 @@
 regolith.look.path: /usr/share/regolith-look/ayu-dark
+wm.binding.launcher.app: d
+wm.binding.exit_app Shift+a
