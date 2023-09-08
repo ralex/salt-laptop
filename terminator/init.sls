@@ -5,7 +5,7 @@ terminator-packages:
       - fonts-inconsolata
 
 {% for user in pillar.get('users', {}) %}
- /home/{{ user }}/.config/terminator/config:
+/home/{{ user }}/.config/terminator/config:
   file.managed:
     - source: salt://terminator/config.j2
 
