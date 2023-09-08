@@ -1,4 +1,5 @@
 regolith.look.path: /usr/share/regolith-look/ayu-dark
 wm.binding.launcher.app: d
+wm.binding.program: gnome-control-center display
 wm.binding.display: s
 wm.binding.exit_app Shift+a
