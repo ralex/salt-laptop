@@ -15,3 +15,5 @@ wm.binding.left: y
 wm.binding.right: u
 wm.binding.up: o
 wm.binding.down: p
+
+gtk.font_name: Cantarell Regular 11
