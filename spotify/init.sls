@@ -12,7 +12,7 @@ spotify-client:
   file.managed:
     - contents: |
         assign [class="Spotify"] $ws8
-    - user: root
-    - group: root
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 {% endfor %}

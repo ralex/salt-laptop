@@ -14,7 +14,7 @@ signal-desktop:
   file.managed:
     - contents: |
         assign [class="Signal"] $ws10
-    - user: root
-    - group: root
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 {% endfor %}

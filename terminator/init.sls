@@ -4,16 +4,16 @@ terminator-packages:
       - terminator
       - fonts-inconsolata
 
-{% for user in pillar.get('users', {}) %}
-/home/{{ user }}/.config/terminator/config:
+{% for key, user in pillar.get('users', {}).items() %}
+/home/{{ key }}/.config/terminator/config:
   file.managed:
     - source: salt://terminator/config.j2
 
-/home/{{ user }}/.config/regolith3/i3/config.d/50_terminator:
+/home/{{ key }}/.config/regolith3/i3/config.d/50_terminator:
   file.managed:
     - contents: |
         assign [class="Terminator"] $ws1
-    - user: root
-    - group: root
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
     - mode: 644
 {% endfor %}
