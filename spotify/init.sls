@@ -15,3 +15,4 @@ spotify-client:
     - user: root
     - group: root
     - mode: 644
+{% endfor %}
