@@ -1,6 +1,6 @@
 regolith.look.path: /usr/share/regolith-look/ayu-dark
-regolith.wallpaper.file: 
-regolith.wallpaper.color.primary: 
+regolith.wallpaper.file:
+regolith.wallpaper.color.primary:
 
 wm.program.settings: regolith-control-center
 wm.program.display: regolith-control-center display
@@ -10,3 +10,5 @@ wm.program.bluetooth: regolith-control-center bluetooth
 wm.binding.launcher.app: d
 wm.binding.display: s
 wm.binding.exit_app: Shift+a
+wm.binding.lock: l
+wm.binding.look_selector: o
