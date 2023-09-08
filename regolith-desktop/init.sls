@@ -20,6 +20,7 @@ regolith.packages:
       - i3xrocks-rofication
       - i3xrocks-tailscale
       - i3xrocks-volume
+      - i3xrocks-weather
       - i3xrocks-wifi
 
 {% for key, user in pillar.get('users', {}).items() %}
