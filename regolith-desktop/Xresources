@@ -11,3 +11,7 @@ wm.binding.launcher.app: d
 wm.binding.display: s
 wm.binding.exit_app: Shift+a
 wm.binding.lock: l
+wm.binding.left: y
+wm.binding.right: u
+wm.binding.up: o
+wm.binding.down: p
