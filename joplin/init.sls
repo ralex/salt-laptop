@@ -28,6 +28,14 @@
     - group: {{ user.gid }}
     - mode: 644
     - makedirs: true
+
+/home/{{ key }}/.config/regolith3/i3/config.d/50_joplin:
+  file.managed:
+    - contents: |
+        assign [class="Joplin"] $ws7
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
+    - mode: 644
 {% endfor %}
 
 /usr/share/applications/joplin.desktop:
