@@ -13,3 +13,11 @@ assign [class="libreoffice-writer"] $ws7
 assign [class="libreoffice-calc"] $ws7
 assign [class="Evince"] $ws7
 assign [class="Slack"] $ws10
+
+# Default pop-up as floating window
+for_window [window_role="pop-up"] floating enable
+
+# Default pop-up for specific applications
+for_window [class="gnome-calculator"] floating enable
+for_window [class="Evolution-alarm-notify"] floating enable
+for_window [class="Sony Headphones App"] floating enable
