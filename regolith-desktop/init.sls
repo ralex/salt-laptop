@@ -34,12 +34,12 @@ regolith.packages:
     - group: root
     - mode: 644
 
-{% set files = [
+{% set i3_files = [
   "50_windows_assignment",
   "50_workspaces_layout"
 ]
 %}
-{% for file in files %}
+{% for file in i3_files %}
 /home/{{ key }}/.config/regolith3/i3/config.d/{{ file }}:
   file.managed:
     - source: salt://regolith-desktop/i3/{{ file }}
@@ -49,7 +49,7 @@ regolith.packages:
     - mode: 644
 {% endfor %}
 
-{% set files = [
+{% set i3xrocks_files = [
   "01_setup",
   "10_media-player",
   "20_key-indicator",
@@ -63,7 +63,7 @@ regolith.packages:
   "90_time"
 ]
 %}
-{% for file in files %}
+{% for file in i3xrocks_files %}
 /home/{{ key }}/.config/regolith3/i3xrocks/conf.d/{{ file }}:
   file.managed:
     - source: salt://regolith-desktop/i3xrocks/{{ file }}
@@ -90,7 +90,10 @@ regolith-look refresh for {{ key }}:
     - onchanges:
       - pkg: regolith.packages
       - file: /home/{{ key }}/.config/regolith3/Xresources
-      {% for file in files %}
+      {% for file in i3_files %}
       - file: /home/{{ key }}/.config/regolith3/i3/config.d/{{ file }}
+      {% endfor %}
+      {% for file in i3xrocks_files %}
+      - file: /home/{{ key }}/.config/regolith3/i3xrocks/conf.d/{{ file }}
       {% endfor %}
 {% endfor %}
