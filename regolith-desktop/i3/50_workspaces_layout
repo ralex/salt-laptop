@@ -20,3 +20,7 @@ for_window [class=".*"] title_format " %title"
 # workspace "$ws8" output nonprimary
 # workspace "$ws9" output nonprimary
 # workspace "$ws10" output nonprimary
+
+## Move workspace to another screen
+bindsym $mod+Prior move workspace to output left
+bindsym $mod+Next move workspace to output right
