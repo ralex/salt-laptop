@@ -20,7 +20,6 @@ regolith.packages:
       - i3xrocks-rofication
       - i3xrocks-tailscale
       - i3xrocks-volume
-      - i3xrocks-weather
       - i3xrocks-wifi
 
 {% for key, user in pillar.get('users', {}).items() %}
@@ -44,6 +43,30 @@ regolith.packages:
 /home/{{ key }}/.config/regolith3/i3/config.d/{{ file }}:
   file.managed:
     - source: salt://regolith-desktop/i3/{{ file }}
+    - user: {{ user.uid }}
+    - group: {{ user.gid }}
+    - makedirs: True
+    - mode: 644
+{% endfor %}
+
+{% set files = [
+  "01_setup",
+  "10_media-player",
+  "20_key-indicator",
+  "30_bluetooth",
+  "30_wifi",
+  "40_tailscale",
+  "80_battery",
+  "80_volume",
+  "90_microphone",
+  "90_rofication",
+  "90_time"
+]
+%}
+{% for file in files %}
+/home/{{ key }}/.config/regolith3/i3xrocks/conf.d/{{ file }}:
+  file.managed:
+    - source: salt://regolith-desktop/i3xrocks/{{ file }}
     - user: {{ user.uid }}
     - group: {{ user.gid }}
     - makedirs: True

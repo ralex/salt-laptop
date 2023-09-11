@@ -1,0 +1,4 @@
+# Date Time
+[time]
+command=echo " $(date +%U)  $(date '+%d/%m %T')"
+interval=1
