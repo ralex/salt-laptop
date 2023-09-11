@@ -36,7 +36,8 @@ regolith.packages:
     - mode: 644
 
 {% set files = [
-  "50_windows_assignment"
+  "50_windows_assignment",
+  "50_workspaces_layout"
 ]
 %}
 {% for file in files %}

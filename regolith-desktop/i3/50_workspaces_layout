@@ -8,13 +8,15 @@ for_window [class=".*"] title_format " %title"
 # hide_edge_borders both
 
 ## Default workspaces assignment to monitors
-workspace "$ws1" output primary
-workspace "$ws2" output primary
-workspace "$ws3" output primary
-workspace "$ws4" output primary
-workspace "$ws5" output primary
-workspace "$ws6" output primary
-workspace "$ws7" output primary
-workspace "$ws8" output nonprimary
-workspace "$ws9" output nonprimary
-workspace "$ws10" output nonprimary
+## Disabled for now as it won't work
+## https://github.com/regolith-linux/regolith-desktop/issues/890
+# workspace "$ws1" output primary
+# workspace "$ws2" output primary
+# workspace "$ws3" output primary
+# workspace "$ws4" output primary
+# workspace "$ws5" output primary
+# workspace "$ws6" output primary
+# workspace "$ws7" output primary
+# workspace "$ws8" output nonprimary
+# workspace "$ws9" output nonprimary
+# workspace "$ws10" output nonprimary
