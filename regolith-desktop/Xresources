@@ -23,5 +23,5 @@ gtk.font_name: Cantarell Regular 11
 i3xrocks.label.color: #ffffff
 i3xrocks.value.color: #999999
 i3xrocks.value.mediaplayerwidth: 100
-i3xrocks.label.capslock: 
+i3xrocks.label.capslock: " "
 i3xrocks.label.numlock: 
