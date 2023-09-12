@@ -8,7 +8,6 @@ wm.program.wifi: regolith-control-center wifi
 wm.program.bluetooth: regolith-control-center bluetooth
 wm.program.1: /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 wm.program.2: /usr/bin/terminator
-wm.program.3: /usr/bin/firefox
 
 wm.binding.launcher.app: d
 wm.binding.display: s
