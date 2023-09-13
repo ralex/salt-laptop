@@ -1,3 +1,5 @@
+[separator]
+
 # Battery indicator
 #
 # Displays total percentage charge left of specified battery.
