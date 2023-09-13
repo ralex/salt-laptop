@@ -3,3 +3,5 @@
 # Displays media controls
 [media-player]
 interval=5
+
+[separator]
