@@ -24,4 +24,4 @@ bindsym $mod+Prior move workspace to output left
 bindsym $mod+Next move workspace to output right
 
 ## use Ilia windows mode with Alt+tab
-bindsym $mod+Tab exec ilia -p windows
+bindsym Mod1+Tab exec ilia -p windows
