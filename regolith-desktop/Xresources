@@ -2,10 +2,10 @@ regolith.look.path: /usr/share/regolith-look/ayu-dark
 regolith.wallpaper.file:
 regolith.wallpaper.color.primary:
 
-wm.program.settings: regolith-control-center
-wm.program.display: regolith-control-center display
-wm.program.wifi: regolith-control-center wifi
-wm.program.bluetooth: regolith-control-center bluetooth
+wm.program.settings: gnome-control-center
+wm.program.display: gnome-control-center display
+wm.program.wifi: gnome-control-center wifi
+wm.program.bluetooth: gnome-control-center bluetooth
 wm.program.1: /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 wm.program.2: /usr/bin/terminator
 
