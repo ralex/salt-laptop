@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Logseq
+GenericName=Logseq
+Comment=A privacy-first, open-source knowledge base
+Exec=/opt/logseq/Logseq-linux.AppImage
+Terminal=false
+StartupNotify=false
+Categories=Application
