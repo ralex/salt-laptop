@@ -19,6 +19,15 @@
     - mode: 755
     - makedirs: true
 
+/opt/logseq/icon.png:
+  file.managed:
+    - source: https://raw.githubusercontent.com/logseq/logseq/master/resources/img/logo.png
+    - skip_verify: True
+    - user: root
+    - group: root
+    - mode: 644
+    - makedirs: true
+
 /usr/share/applications/logseq.desktop:
   file.managed:
     - source: salt://logseq/logseq.desktop

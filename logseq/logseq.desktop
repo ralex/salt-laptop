@@ -4,6 +4,7 @@ Name=Logseq
 GenericName=Logseq
 Comment=A privacy-first, open-source knowledge base
 Exec=/opt/logseq/Logseq-linux.AppImage
+Icon=/opt/logseq/icon.png
 Terminal=false
 StartupNotify=false
 Categories=Application
