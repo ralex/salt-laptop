@@ -1,5 +1,0 @@
-# tailscale
-#
-# Display Tailscale IP
-[tailscale]
-interval=30
