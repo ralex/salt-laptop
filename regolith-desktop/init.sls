@@ -58,7 +58,7 @@ xdg-desktop-portal-gnome:
   "20_key-indicator",
   "30_bluetooth",
   "30_wifi",
-  "40_tailscale",
+  "40_nm-vpn",
   "80_battery",
   "80_volume",
   "90_microphone",
