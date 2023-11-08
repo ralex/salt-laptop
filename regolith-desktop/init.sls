@@ -1,4 +1,4 @@
-{% set os = grains.get('os_family') %}
+{% set os = grains.get('os_family')|lower %}
 {% set codename = grains.get('oscodename') %}
 {% if codename == 'trixie' %}
 {% set codename = 'bookworm' %}
