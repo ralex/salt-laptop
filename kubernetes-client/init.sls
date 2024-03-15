@@ -1,10 +1,12 @@
 {% from "kubernetes-client/map.jinja" import kubernetes_client with context %}
 
-deb [signed-by=/etc/apt/trusted.gpg.d/kubernetes.gpg] https://apt.kubernetes.io kubernetes-xenial main:
+curl https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | gpg --dearmor > /etc/apt/keyrings/kubernetes-apt-keyring.gpg:
+  cmd.run:
+    - unless: test -f /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/kubernetes.list
-    - key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-    - aptkey: False
 
 kubernetes-client-packages:
   pkg.installed:
