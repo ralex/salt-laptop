@@ -1,7 +1,7 @@
 deb [signed-by=/etc/apt/trusted.gpg.d/spotify.gpg] http://repository.spotify.com stable non-free:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/spotify.list
-    - key_url: https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
+    - key_url: https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg
     - aptkey: False
 
 spotify-client:
