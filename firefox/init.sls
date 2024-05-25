@@ -1,5 +1,6 @@
-deb [signed-by=/etc/apt/trusted.gpg.d/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main:
+mozilla-repo:
   pkgrepo.managed:
+    - name: deb [signed-by=/etc/apt/trusted.gpg.d/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main
     - file: /etc/apt/sources.list.d/mozilla.list
     - key_url: https://packages.mozilla.org/apt/repo-signing-key.gpg
     - aptkey: False
@@ -8,7 +9,7 @@ gpg -n -q --import --import-options import-show /etc/apt/trusted.gpg.d/packages.
   cmd.run:
     - success_stdout: '35BAA0B33E9EB396F59CA838C0BA5CE6DC6315A3'
     - onchanges:
-      - pkgrepo: deb [signed-by=/etc/apt/trusted.gpg.d/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main
+      - pkgrepo: mozilla-repo
 
 firefox-packages:
   pkg.installed:
