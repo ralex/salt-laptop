@@ -36,7 +36,7 @@ xdg-desktop-portal-gnome:
     - contents: |
         [User]
         Session=regolith
-        Icon=/home/{{ key }}/.face
+        Icon=/var/lib/AccountsService/icons/{{ key }}
         SystemAccount=false
     - user: root
     - group: root
