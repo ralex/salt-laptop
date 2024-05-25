@@ -1,3 +1,7 @@
+curl -s https://packages.mozilla.org/apt/repo-signing-key.gpg > /etc/apt/trusted.gpg.d/packages.mozilla.org.asc:
+  cmd.run:
+    - unless: test -f /etc/apt/trusted.gpg.d/packages.mozilla.org.asc
+
 mozilla-repo:
   pkgrepo.managed:
     - name: deb [signed-by=/etc/apt/trusted.gpg.d/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main
