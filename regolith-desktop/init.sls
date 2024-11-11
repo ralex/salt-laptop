@@ -35,7 +35,7 @@ xdg-desktop-portal-gnome:
   file.managed:
     - contents: |
         [User]
-        Session=regolith
+        Session=regolith-x11
         Icon=/var/lib/AccountsService/icons/{{ key }}
         SystemAccount=false
     - user: root
