@@ -27,9 +27,6 @@ regolith.packages:
       - i3xrocks-volume
       - i3xrocks-wifi
 
-xdg-desktop-portal-gnome:
-  pkg.removed
-
 {% for key, user in pillar.get('users', {}).items() %}
 /var/lib/AccountsService/users/{{ key }}:
   file.managed:
